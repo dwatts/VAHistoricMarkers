@@ -14,7 +14,8 @@ html, body, #viewDiv {
     position: absolute;
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
-    font-size: 45
+    font-size: 45;
+    filter: drop-shadow(10px 15px 10px rgba(217, 217, 217, 0.9));
 }
 
 #subTitle{
@@ -26,19 +27,29 @@ html, body, #viewDiv {
     position: absolute;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    font-size: 25
+    font-size: 25;
+    filter: drop-shadow(10px 15px 10px rgba(217, 217, 217, 0.9));
 }
 
 #subSubTitle{
     height: 10px;
     width: 800px;
-    z-index: 1001;
+    z-index: 1100;
     top: 100px;
     left: 40px;
     position: absolute;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    font-size: 18
+    font-size: 18;
+    filter: drop-shadow(10px 15px 10px rgba(217, 217, 217, 0.9));
+}
+
+.fa-question-circle {
+    padding-left: 9px;
+}
+
+.fa-question-circle:hover {
+   color: #d53e4f;
 }
 
 h1 {
@@ -96,6 +107,7 @@ a:hover {
    font-weight: 400 !important;
    font-size: 18px !important;
    padding-bottom: 4px;   
+   filter: drop-shadow(10px 15px 10px rgba(217, 217, 217, 0.9));    
 }
 
 #addSearch {
@@ -150,14 +162,14 @@ a:hover {
     width: 18%;
 }
 
-
-
 .black_history, .building, .civil, .colonial, .indust, .comm, .instit, .na, .people, .rev {
     margin:0 auto;
     max-width:60px;
     opacity: 1;
     width: 80%;
     cursor: pointer;
+    z-index: 1;
+    
 }
 
 .black_history:hover, .building:hover, .civil:hover, .colonial:hover, .indust:hover, .comm:hover, .instit:hover, .na:hover, .people:hover, .rev:hover {
@@ -176,6 +188,7 @@ a:hover {
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
+    filter: drop-shadow(10px 15px 10px rgba(217, 217, 217, 0.9));
 }
 
 #bh_name.pressed, #p_name.pressed, #cw_name.pressed, #ch_name.pressed, #i_name.pressed, #cc_name.pressed, #inst_name.pressed, #na_name.pressed, #pe_name.pressed, #r_name.pressed {
@@ -258,7 +271,7 @@ a:hover {
 }
 
 .esri-popup__button:hover {
-    color: #abdda4 !important;
+    color: #d53e4f !important;
     background-color: transparent !important;
 }
 
@@ -326,6 +339,41 @@ a:hover {
 }
 
 .esri-widget--button:hover {
-  background-color: #abdda4 !important;
+  background-color: #d53e4f !important;
   color: #000 !important;
+}
+
+/***************Tooltip Styling*************/
+
+.fa-question-circle .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: rgba(255,255,255, 0.9);
+  color: #404040;
+  text-align: left;
+  border-radius: 5px;
+  border: 3px solid #000;
+  padding: 8px;
+  position: absolute;
+  top: 215%;
+  left: 21%;
+  margin-left: -60px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400 !important;
+  font-size: 13px !important;    
+}
+
+.fa-question-circle .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 102%;
+  left: 50.5%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+.fa-question-circle:hover .tooltiptext {
+  visibility: visible;
 }

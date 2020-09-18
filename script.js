@@ -392,8 +392,8 @@
         });  
           
         const mapBaseLayer = new WebTileLayer({
-          urlTemplate: "https://stamen-tiles-{subDomain}.a.ssl.fastly.net/terrain-background/{level}/{col}/{row}.png",
-          subDomains: ["a", "b", "c", "d"],
+          urlTemplate: "https://stamen-tiles-{subDomain}.a.ssl.fastly.net/terrain-background/{level}/{col}/{row}.png",   
+          subDomains: ["a", "b", "c", "d"],  
           copyright:
             'Map tiles by <a href="http://stamen.com/">Stamen Design</a>, ' +
             'under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. ' +
@@ -802,7 +802,7 @@
               sources: [
                 {
                     layer: BH,
-                    searchFields: ["SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+                    searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
                     displayField: "MarkerNme",
                     exactMatch: false,
                     //placeholder: "Enter a District Name",
@@ -810,7 +810,7 @@
                 },
                 {
                     layer: BP,
-                    searchFields: ["SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+                    searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
                     displayField: "MarkerNme",
                     exactMatch: false,
                     //placeholder: "Enter a District Name",
@@ -818,7 +818,7 @@
                 },
                 {
                     layer: CW,
-                    searchFields: ["SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+                    searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
                     displayField: "MarkerNme",
                     exactMatch: false,
                     //placeholder: "Enter a District Name",
@@ -826,7 +826,7 @@
                 },
                 {
                     layer: CF,
-                    searchFields: ["SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+                    searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
                     displayField: "MarkerNme",
                     exactMatch: false,
                     //placeholder: "Enter a District Name",
@@ -834,7 +834,7 @@
                 },
                 {
                     layer: CI,
-                    searchFields: ["SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+                    searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
                     displayField: "MarkerNme",
                     exactMatch: false,
                     //placeholder: "Enter a District Name",
@@ -842,7 +842,7 @@
                 },
                 {
                     layer: COMM,
-                    searchFields: ["SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+                    searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
                     displayField: "MarkerNme",
                     exactMatch: false,
                     //placeholder: "Enter a District Name",
@@ -850,7 +850,7 @@
                 },
                 {
                     layer: INST,
-                    searchFields: ["SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+                    searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
                     displayField: "MarkerNme",
                     exactMatch: false,
                     //placeholder: "Enter a District Name",
@@ -858,7 +858,7 @@
                 },
                 {
                     layer: NA,
-                    searchFields: ["SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+                    searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
                     displayField: "MarkerNme",
                     exactMatch: false,
                     //placeholder: "Enter a District Name",
@@ -866,7 +866,7 @@
                 },
                 {
                     layer: PEOPLE,
-                    searchFields: ["SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+                    searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
                     displayField: "MarkerNme",
                     exactMatch: false,
                     //placeholder: "Enter a District Name",
@@ -874,7 +874,7 @@
                 },
                 {
                     layer: REV,
-                    searchFields: ["SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+                    searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
                     displayField: "MarkerNme",
                     exactMatch: false,
                     //placeholder: "Enter a District Name",

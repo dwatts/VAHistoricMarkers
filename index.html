@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="https://js.arcgis.com/4.16/esri/css/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">  
       
@@ -26,7 +27,7 @@
     
     <div id="title">Historic Signs of Virginia</div>
     <div id="subTitle">Mapping Virginia's Historic Marker Program</div>      
-    <div id="subSubTitle">Toggle Marker Layers</div>
+    <div id="subSubTitle">Toggle Marker Layers<i class="fas fa-question-circle" style="font-size: 19px"><span class="tooltiptext">Turn marker categories on and off by clicking on category icons. Categories are turned off when clicked and they become slightly transparent.</span></i></div>
     <div id="menu">
         <div id="icon_div">   
             <img id="black_history_button" class="black_history" src="img/Black_History.png">
@@ -77,12 +78,11 @@
     <div id="wordSearchBox">
         <div class="searchTitle">Search by Keyword</div>
         <div id="wordSearch"></div>  
-    </div>   
+    </div>
       
     <div id="viewDiv"></div>  
+
       
-      
-    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://js.arcgis.com/4.16/"></script>
     <script src="renderers.js"></script>  
