@@ -10,14 +10,14 @@
         "esri/widgets/Home",
         "esri/widgets/Zoom",
         "esri/widgets/Expand",  
-        "esri/widgets/NavigationToggle/NavigationToggleViewModel",  
+        //"esri/widgets/NavigationToggle/NavigationToggleViewModel",  
         "esri/layers/SceneLayer",
         "esri/layers/WebTileLayer",
         "esri/widgets/Search",
         "esri/tasks/Locator",
         "esri/geometry/Polygon"
           
-      ], function(WebScene, SceneView, Basemap, FeatureLayer, SimpleRenderer, Graphic, ElevationLayer, BaseElevationLayer, Home, Zoom, Expand, NavigationToggleVM, SceneLayer, WebTileLayer, Search, Locator, Polygon) {
+      ], function(WebScene, SceneView, Basemap, FeatureLayer, SimpleRenderer, Graphic, ElevationLayer, BaseElevationLayer, Home, Zoom, Expand, /*NavigationToggleVM,*/ SceneLayer, WebTileLayer, Search, Locator, Polygon) {
         
           
         var ExaggeratedElevationLayer = BaseElevationLayer.createSubclass({
@@ -448,13 +448,11 @@
           alphaCompositingEnabled: true,
           popup: {
               collapseEnabled: false,
-              featureNavigationEnabled: true, 
+              //featureNavigationEnabled: true,
+              dockEnabled: true,
               dockOptions: {
                   buttonEnabled: false,
-                  breakpoint: {
-                      height: 1000,
-                      width: 600
-                  }
+                  breakpoint: false
               } 
           },    
           environment: {
@@ -476,7 +474,7 @@
           },
           constraints: {
               altitude: {
-                min: 3000,
+                min: 1000,
                 max: 900000,
                 tilt: 0
               },
@@ -485,7 +483,7 @@
               }*/
             }
         });
-        
+          
         view.popup.viewModel.actions = false;  
         
         /////////////////////Scale Dependent Renderers////////////////////////
