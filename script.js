@@ -47,7 +47,7 @@
         //Add Layers to Map and Set Popup Info//  
           
         const BH = new FeatureLayer({
-          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage/FeatureServer/0",
+          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_Near/FeatureServer",
           renderer: signRenderer,
           definitionExpression: "NoLatLng <> 'FLAG' AND Tag = 'Black_History'",
           visibility: true,
@@ -70,7 +70,7 @@
         }  
           
         const BP = new FeatureLayer({
-          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage/FeatureServer/0",
+          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_Near/FeatureServer",
           renderer: signRenderer,
           definitionExpression: "NoLatLng <> 'FLAG' AND Tag = 'Building_Places'",
           visibility: true,            
@@ -93,7 +93,7 @@
         }
         
         const CW = new FeatureLayer({
-          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage/FeatureServer/0",
+          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_Near/FeatureServer",
           renderer: signRenderer,
           definitionExpression: "NoLatLng <> 'FLAG' AND Tag = 'Civil_War'",
           visibility: true,            
@@ -116,7 +116,7 @@
         }  
           
         const CF = new FeatureLayer({
-          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage/FeatureServer/0",
+          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_Near/FeatureServer",
           renderer: signRenderer,
           definitionExpression: "NoLatLng <> 'FLAG' AND Tag = 'Colonial_Frontier'",
           visibility: true,            
@@ -139,7 +139,7 @@
         }
         
         const CI = new FeatureLayer({
-          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage/FeatureServer/0",
+          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_Near/FeatureServer",
           renderer: signRenderer,
           definitionExpression: "NoLatLng <> 'FLAG' AND Tag = 'Commerce_Industry'",
           visibility: true,            
@@ -162,7 +162,7 @@
         }  
           
         const COMM = new FeatureLayer({
-          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage/FeatureServer/0",
+          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_Near/FeatureServer",
           renderer: signRenderer,
           definitionExpression: "NoLatLng <> 'FLAG' AND Tag = 'Communities'",
           visibility: true,            
@@ -185,7 +185,7 @@
         }
           
         const INST = new FeatureLayer({
-          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage/FeatureServer/0",
+          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_Near/FeatureServer",
           renderer: signRenderer,
           definitionExpression: "NoLatLng <> 'FLAG' AND Tag = 'Institutions'",
           visibility: true,            
@@ -208,7 +208,7 @@
         }
           
         const NA = new FeatureLayer({
-          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage/FeatureServer/0",
+          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_Near/FeatureServer",
           renderer: signRenderer,
           definitionExpression: "NoLatLng <> 'FLAG' AND Tag = 'Native_American'",
           visibility: true,            
@@ -231,7 +231,7 @@
         }
           
         const PEOPLE = new FeatureLayer({
-          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage/FeatureServer/0",
+          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_Near/FeatureServer",
           renderer: signRenderer,
           definitionExpression: "NoLatLng <> 'FLAG' AND Tag = 'People'",
           visibility: true,            
@@ -254,7 +254,7 @@
         }
           
         const REV = new FeatureLayer({
-          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage/FeatureServer/0",
+          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_Near/FeatureServer",
           renderer: signRenderer,
           definitionExpression: "NoLatLng <> 'FLAG' AND Tag = 'Revolution_1812'",
           visibility: true,            

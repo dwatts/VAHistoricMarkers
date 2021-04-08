@@ -1,7 +1,7 @@
 var verticalOffset = {
     screenLength: 40,
-    maxWorldLength: 4000,
-    minWorldLength: 1000
+    maxWorldLength: 2000,
+    minWorldLength: 500
 };
 
 function getSiteColor(color) {
