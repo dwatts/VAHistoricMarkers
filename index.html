@@ -34,17 +34,68 @@
   <body>
       
     <div id="infoDiv">
-        <h2>About the Map</h2>
-        <h4>Begun in 1927 and now including more than 2,500 signs, the <a href="https://www.dhr.virginia.gov/highway-markers/" target="_blank">Virginia Department of Historic Resources</a> (DHR) Historic Marker Program is the oldest historic marker program in the United States.</h4>
-        <h4>According to DHR, the markers "document facts, persons, events, and places prominently identified with the history of the nation, state or region". More information about the marker program can be found <a href="https://www.dhr.virginia.gov/highway-markers/historical-highway-markers-frequently-asked-questions/" target="_blank">here</a> including instructions on how the public can request the addition of new markers.</h4>
-        <h4>The marker location data that powers this map was provided by the Virginia Department of Historic Resources and the basemap tiles by <a href="https://stamen.com/" target="_blank">Stamen Design</a>. The subject categories were added by the maps' author in order to facilitate a deeper understanding of the depth and breadth of historic markers in Virginia.</h4>
-        <h4>The Historic Markers of Virginia mapping application is easy to use and the text of each marker can be read by clicking on icons on the map. Individual marker categories can be turned on & off by clicking on the layer icons at the top of the map. Map users can also search either by keyword or by address to find specific markers or see markers in areas of specific interest.</h4>
-        <h4>Copyright 2020 <a href="https://www.danielhwatts.com" target="_blank">Daniel H. Watts</a></h4>
-    </div>   
+        <h2>About the App</h2>
+        <div class="infoContent">
+            <h4>Begun in 1927 and now including more than 2,500 signs, the <a href="https://www.dhr.virginia.gov/highway-markers/" target="_blank">Virginia Department of Historic Resources</a> (VADHR) Historic Marker Program is the oldest historic marker program in the United States.</h4>
+            <h4>According to the VADHR, the markers "document facts, persons, events, and places prominently identified with the history of the nation, state or region". More information about the marker program can be found <a href="https://www.dhr.virginia.gov/highway-markers/historical-highway-markers-frequently-asked-questions/" target="_blank">here</a> including instructions on how the public can request the addition of new markers.</h4>
+            <h4>The raw marker location data that powers this map was provided by the VADHR and the basemap tiles by <a href="https://stamen.com/" target="_blank">Stamen Design</a>. Subject categories were added by the map's author in order to facilitate a deeper understanding of the depth and breadth of historic markers in Virginia.</h4>
+            <h4>The Historic Markers of Virginia mapping application is easy to use and the text of each marker can be read by clicking on icons on the map. Individual marker categories can be turned on & off by clicking on the layer icons at the top of the map. Map users can also search either by keyword or by address to find specific markers or see markers in areas of specific interest.</h4>
+            <h4>Copyright 2020 <a href="https://www.danielhwatts.com" target="_blank">Daniel H. Watts</a></h4>
+        </div>
+    </div>
+    
+    <div id="legendDiv">
+        <h2>Legend</h2>
+        <div id="legendContainer">
+            <div id="icon_div_leg">   
+                <img class="black_history_leg" src="img/Black_History.png">
+                <div id="bh_name_leg">Black History</div>
+            </div>
+            <div id="icon_div_leg">
+                <img class="comm_leg" src="img/Communities.png">
+                <div id="cc_name_leg">Cities & Counties</div>
+            </div>
+            <div id="icon_div_leg">    
+                <img class="civil_leg" src="img/Civil.png">
+                <div id="cw_name_leg">Civil War</div>
+            </div>
+            <div id="icon_div_leg">
+                <img class="colonial_leg" src="img/Colonial.png">
+                <div id="ch_name_leg">Colonial History</div>
+            </div>
+            <div id="icon_div_leg">
+                <img class="indust_leg" src="img/CommIndust.png">
+                <div id="i_name_leg">Industry</div>
+            </div>
+            <div id="icon_div_leg">
+                <img class="instit_leg" src="img/Institutions.png">
+                <div id="inst_name_leg">Institutions</div>
+            </div>        
+            <div id="icon_div_leg">
+                <img class="na_leg" src="img/Native_American.png">
+                <div id="na_name_leg">Indigenous History</div>
+            </div>
+            <div id="icon_div_leg">
+                <img class="building_leg" src="img/Buildings_Places.png">
+                <div id="p_name_leg">Places</div>
+            </div>
+            <div id="icon_div_leg">
+                <img class="people_leg" src="img/People.png">
+                <div id="pe_name_leg">People</div>
+            </div>
+            <div id="icon_div_leg">
+                <img class="rev_leg" src="img/Revolution.png">
+                <div id="r_name_leg">Revolution & 1812</div>
+            </div>     
+        </div>
+
+    </div>
+
+    <div class="navbar"></div>
     
     <div id="title">Historic Markers of Virginia</div>
     <div id="subTitle">Mapping Virginia's Historic Marker Program</div>      
-    <div id="subSubTitle">Toggle Marker Categories<i class="fas fa-question-circle" style="font-size: 19px"><span class="tooltiptext">Turn marker categories on and off by clicking on category icons. Categories are turned off when clicked and they become slightly transparent.</span></i></div>
+    <div id="toggleText">Toggle Marker Categories<i class="fas fa-question-circle" style="font-size: 19px"><span class="tooltiptext">Turn marker categories on and off by clicking on category icons. Categories are turned off when clicked and they become slightly transparent.</span></i></div>
     <div id="menu">
         <div id="icon_div">   
             <img id="black_history_button" class="black_history" src="img/Black_History.png">
@@ -72,7 +123,7 @@
         </div>        
         <div id="icon_div">
             <img id="na_button" class="na" src="img/Native_American.png">
-            <div id="na_name">Native American History</div>
+            <div id="na_name">Indigenous History</div>
         </div>
         <div id="icon_div">
             <img id="building_button" class="building" src="img/Buildings_Places.png">
@@ -84,19 +135,35 @@
         </div>
         <div id="icon_div">
             <img id="rev_button" class="rev" src="img/Revolution.png">
-            <div id="r_name">Revolution & War of 1812</div>
+            <div id="r_name">Revolution & 1812</div>
         </div>     
     </div>
-      
-    <div id="addSearchBox">
-        <div class="searchTitle">Search by Address or Place</div>
-        <div id="addSearch"></div>  
-    </div>
-    <div id="wordSearchBox">
+
+    
+    <div id="searchDiv">
         <div class="searchTitle">Search by Keyword</div>
-        <div id="wordSearch"></div>  
+        <div id="wordSearchBox">
+            <button id="searchButton">Toggle Search</button>
+            <div id="wordSearch"></div>  
+        </div>
     </div>
       
+    <div id="zoomButtonDiv">
+        <div id="zoomContainer">
+          <div id="zoomButtons"></div>
+        </div>  
+    </div>
+
+    <div id="othButtonDiv">
+        <div id="othContainer">
+          <div id="homeButton"></div>
+          <button id="infoButton" class='esri-icon-question'></button>
+          <button id="legendButton" class='esri-icon-legend'></button>
+        </div>  
+    </div>
+
+    <!--<div id="footer"></div>-->
+
     <div id="viewDiv"></div>  
 
       

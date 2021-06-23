@@ -15,7 +15,6 @@ html, body, #viewDiv {
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
     font-size: 45;
-    filter: drop-shadow(10px 15px 10px rgba(217, 217, 217, 0.9));
 }
 
 #subTitle{
@@ -28,10 +27,9 @@ html, body, #viewDiv {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 25;
-    filter: drop-shadow(10px 15px 10px rgba(217, 217, 217, 0.9));
 }
 
-#subSubTitle{
+#toggleText{
     height: 10px;
     width: 800px;
     z-index: 1100;
@@ -41,11 +39,14 @@ html, body, #viewDiv {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 18;
-    filter: drop-shadow(10px 15px 10px rgba(217, 217, 217, 0.9));
+}
+
+.navbar {
+    display: none;
 }
 
 .fa-question-circle {
-    padding-left: 9px;
+    padding-left: 5px;
 }
 
 .fa-question-circle:hover {
@@ -59,28 +60,27 @@ h1 {
    padding: 0px 0px 0px 10px !important;
    margin-top: 0px;
    margin-bottom: 0px;
-    
 }
 
 h2 {
    font-family: 'Roboto', sans-serif;
    font-weight: 600 !important;
    font-size: 20px !important;
-   padding-left: 6px;    
+   padding-left: 6px;
 }
 
 h3 {
    font-family: 'Roboto', sans-serif;
    font-weight: 400 !important;
    font-size: 15px !important;
-   padding-left: 7px;    
+   padding-left: 7px;   
 }
 
 h4 {
    font-family: 'Roboto', sans-serif;
    font-weight: 400 !important;
    font-size: 13px !important;
-   padding-left: 7px;    
+   padding-left: 7px; 
 }
 
 a {
@@ -94,58 +94,162 @@ a:hover {
 
 /***************Search Styling*************/
 
-#addSearchBox {
+#searchDiv {
     position: absolute;
     left: 40px;
-    top: 245px;
-    z-index: 10001;
-    width: 320px;
+    top: 230px;
+    width: 350px;
+    z-index: 300;
+    display: visible;
+}
+
+#wordSearchBox {
+    display: flex;
+    /*align-items: center;*/
+}
+
+#searchButton {
+    color: white;
+    height: 36px;
+    width: 100px;
+    border-radius: 4px;
+    border: 2px solid #000;
+    background: #d53e4f;
+    transition: background 0.3s ease;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif !important;
+    padding: 0px !important;
+}
+      
+#searchButton:hover {
+    background: #c23a49;
+    color: white;
 }
 
 .searchTitle {
    font-family: 'Roboto', sans-serif;
    font-weight: 400 !important;
    font-size: 18px !important;
-   padding-bottom: 4px;   
-   filter: drop-shadow(10px 15px 10px rgba(217, 217, 217, 0.9));    
-}
-
-#addSearch {
-    width: 100%;
-    border: 3px solid #000;
-    border-radius: 5px;
-}
-
-#wordSearchBox {
-    position: absolute;
-    left: 390px;
-    top: 245px;
-    z-index: 10001;
-    width: 320px;
+   padding-bottom: 4px;      
 }
 
 #wordSearch {
-    width: 100%;
-    border: 3px solid #000;
-    border-radius: 5px;
-    
+    width: 100%;  
 }
+
+.esri-search {
+    width: 100% !important;
+    background-color: transparent !important;
+    border: 2px solid #000;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.esri-menu {
+    background-color: rgba(237, 237, 237,0.75) !important;
+    border-radius: 4px;
+    padding: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px !important;
+    font-weight: 400;
+    box-shadow: 2px 4px 13px rgba(0,0,0,0.3);
+  }
+  
+  .esri-menu .ui {
+    width: 100%;
+  }
+  
+  .esri-menu__list-item {
+    border: unset !important;
+    padding: 5px !important;
+  }
+  
+  .esri-menu__list-item:hover {
+    background-color: rgba(64,64,64,0.1) !important;
+  }
+
+/***************Info Div Styling*************/
 
 #infoDiv {
     background-color: #fff;
     opacity: 0.9;
     width: 450px;
-    height: 500px;
+    height: 410px;
     border-radius: 10px;
     border: 3px solid #000;
     padding: 0px 10px 10px 10px;
+    position: absolute;
+    bottom: 20px;
+    left: 100px;
+    z-index: 500;
+    display: none;
+}
+
+/***************Legend Div Styling*************/
+
+#legendDiv {
+    background-color: #fff;
+    border: 3px solid #000;
+    opacity: 0.9;
+    border-radius: 10px;
+    width: 86%;
+    height: 25%;
+    min-height: 200px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1200;
+    display: none;
+    padding: 10px;
+} 
+
+#legendContainer{
+    height: 65%;
+    min-height: 155px;
+    width: 100%;
+    z-index: 1001;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+
+#icon_div_leg {
+    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    width: 18%;
+}
+
+.black_history_leg, .building_leg, .civil_leg, .colonial_leg, .indust_leg, .comm_leg, .instit_leg, .na_leg, .people_leg, .rev_leg {
+    margin:0 auto;
+    max-width:75px;
+    opacity: 1;
+    width: 70%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#bh_name_leg, #p_name_leg, #cw_name_leg, #ch_name_leg, #i_name_leg, #cc_name_leg, #inst_name_leg, #na_name_leg, #pe_name_leg, #r_name_leg {
+    color:#000;
+    font-size:11px;
+    line-height:13px;
+    margin-top:4px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    filter: drop-shadow(10px 15px 10px rgba(217, 217, 217, 0.9));
 }
 
 /***************Icon Styling*************/
 
 #menu{
-    height: 10px;
-    width: 800px;
+    height: 90px;
+    width: 750px;
     z-index: 1001;
     top: 130px;
     left: 30px;
@@ -164,12 +268,11 @@ a:hover {
 
 .black_history, .building, .civil, .colonial, .indust, .comm, .instit, .na, .people, .rev {
     margin:0 auto;
-    max-width:60px;
+    max-width:55px;
     opacity: 1;
     width: 80%;
     cursor: pointer;
     z-index: 1;
-    
 }
 
 .black_history:hover, .building:hover, .civil:hover, .colonial:hover, .indust:hover, .comm:hover, .instit:hover, .na:hover, .people:hover, .rev:hover {
@@ -182,7 +285,7 @@ a:hover {
 
 #bh_name, #p_name, #cw_name, #ch_name, #i_name, #cc_name, #inst_name, #na_name, #pe_name, #r_name {
     color:#000;
-    font-size:15px;
+    font-size:14px;
     line-height:16px;
     margin-top:4px;
     text-align: center;
@@ -246,7 +349,7 @@ a:hover {
 
 .esri-popup__main-container {
     border-radius: 10px !important;
-    border: 6px solid #000;
+    border: 2px solid #000;
     width: 600px !important;
     height: auto;
 }
@@ -275,7 +378,89 @@ a:hover {
     background-color: transparent !important;
 }
 
+div {
+    text-align: justify;
+}
+
 /***************Nav Button Styling*************/
+
+#zoomButtonDiv {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    /*background-color: rgba(235, 235, 235, 0.9);*/
+    background-color: rgba(0, 0, 0, 0);
+    width: 75px;
+    height: 40px;
+    z-index: 1001;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+#zoomContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#othButtonDiv {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    /*background-color: rgba(235, 235, 235, 0.9);*/
+    background-color: rgba(0, 0, 0, 0);
+    width: 75px;
+    height: 40px;
+    z-index: 1001;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#othContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+#legendButton {
+   display: none;
+   color: #000 !important;
+   background-color: #fff !important;
+   border: 3px solid #000 !important;
+   border-radius: 50% !important;
+   margin-top: 0px !important;
+   padding: 5px;
+   margin-left: 5px;
+}
+
+#legendButton:hover {
+    background-color: #d53e4f !important;
+    color: #000 !important;
+    cursor: pointer;
+}
+
+.esri-icon-question {
+    color: #000 !important;
+    background-color: #fff !important;
+    border: 3px solid #000 !important;
+    border-radius: 50% !important;
+    margin-top: 0px !important;
+    padding: 5px;
+    margin-left: 5px;
+}
+
+.esri-icon-question:hover {
+    background-color: #d53e4f !important;
+    color: #000 !important;
+    cursor: pointer;
+}
+
+.esri-icon-question.click {
+    background-color:  #d53e4f !important;
+}
 
 .esri-zoom  {
   background-color: transparent !important;
@@ -299,7 +484,9 @@ a:hover {
   background-color: #ffff !important;
   border: 3px solid #000 !important;
   border-radius: 50% !important;
-  margin-top: 3px !important;
+  margin-top: 0px !important;
+  margin-left: 5px;
+  padding: 5px;
 }
 
 .esri-home {
@@ -308,34 +495,7 @@ a:hover {
   border: 3px solid #000 !important;
   border-radius: 50% !important;
   margin-top: 0px !important;
-}
-
-.esri-expand {
-    background-color: transparent !important;
-}
-
-.esri-expand .esri-widget--button {
-  color: #000 !important;
-  background-color: #fff !important;
-  border: 3px solid #000 !important;
-  border-radius: 50% !important;
-  margin-top: 0px !important;
-}
-
-.esri-expand__content {
-    border-radius: 10px;
-}
-
-.esri-navigation-toggle__button {
-  color: #000 !important;
-  background-color: #ffff !important;
-  border: 3px solid #000 !important;
-  border-radius: 50% !important;
-  margin-top: 3px !important;
-}
-
-.esri-navigation-toggle {
-    background-color: transparent !important;
+  padding: 5px;
 }
 
 .esri-widget--button:hover {
@@ -355,8 +515,8 @@ a:hover {
   border: 3px solid #000;
   padding: 8px;
   position: absolute;
-  top: 215%;
-  left: 25.4%;
+  top: 220%;
+  left: 198px;
   margin-left: -60px;
   font-family: 'Roboto', sans-serif;
   font-weight: 400 !important;
@@ -376,4 +536,134 @@ a:hover {
 
 .fa-question-circle:hover .tooltiptext {
   visibility: visible;
+}
+
+/*****Responsive Code******/
+
+@media (max-width: 580px) {
+    #title{
+        height: 10px;
+        width: calc(100% - 30px);
+        top: 15px;
+        left: 15px;
+        font-size: 7.35vw;
+        color: black;
+    }
+    
+    #subTitle{
+        display: none;
+    }
+    
+    #legendButton {
+        display: block;
+    }
+
+    #othButtonDiv {
+        width: 108px;
+    }
+
+    #searchDiv {
+        left: 15px;
+        width: calc(100% - 30px) !important;
+        top: 120px;
+    }
+
+    .searchTitle {
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        margin-bottom: 2px;
+    }
+
+    #toggleText{
+        top: 54px;
+        left: 15px;
+        font-size: 14px;
+        font-weight: 700; 
+    }
+
+    #menu {
+        position: absolute;
+        left: 15px;
+        height: 30px;
+        width: calc(100% - 30px);
+        top: 80px;
+    }
+
+    .black_history, .building, .civil, .colonial, .indust, .comm, .instit, .na, .people, .rev {
+        /*max-width:65px;*/
+        width: 87% !important;
+    }
+    
+    #bh_name, #p_name, #cw_name, #ch_name, #i_name, #cc_name, #inst_name, #na_name, #pe_name, #r_name { 
+        display: none;
+    }
+
+    .fa-question-circle {
+        font-size: 14px !important;
+    }
+
+    .esri-popup__main-container {
+        margin-bottom: 65px !important;
+        margin-left: 15px !important;
+        width: calc(100% - 30px) !important;
+        max-height: 250px !important;
+    }
+
+    div {
+        padding-right: 2px !important;
+        text-align: justify;
+    }
+
+    h1 {
+        font-size: 20px !important;
+    }
+
+    h2{
+        font-size: 16px !important;
+    }
+
+    h3 {
+        font-size: 12px !important;
+    }
+
+    .popIcon {
+        width: 45px;
+        height: 45px;
+    }
+
+    #infoDiv {
+        width: 86%;
+        height: 40%;
+        position: fixed;
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: 1200;
+        padding: 10px !important;
+    }
+
+    .infoContent {
+        overflow-y: auto;
+        height: calc(100% - 55px);
+        padding-right: 10px !important;
+    }
+
+    .fa-question-circle .tooltiptext {
+        left: 153px;
+        top: 18px;
+    }
+
+    .navbar {
+        overflow: hidden;
+        position: fixed;
+        top: 0; 
+        width: 100%;
+        height: 210px; 
+        z-index: 100!important;
+        display: flex;
+        align-items: center;
+        background-image: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1));
+      }
 }

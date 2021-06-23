@@ -15,7 +15,7 @@
         "esri/layers/WebTileLayer",
         "esri/widgets/Search",
         "esri/tasks/Locator",
-        "esri/geometry/Polygon"
+        "esri/geometry/Polygon",
           
       ], function(WebScene, SceneView, Basemap, FeatureLayer, SimpleRenderer, Graphic, ElevationLayer, BaseElevationLayer, Home, Zoom, Expand, /*NavigationToggleVM,*/ SceneLayer, WebTileLayer, Search, Locator, Polygon) {
         
@@ -416,17 +416,16 @@
             renderer: {
               type: "simple",
               symbol: {
-                type: "simple-fill", // autocasts as new SimpleFillSymbol()
+                type: "simple-fill",
                 color: [255, 255, 255, 1],
                 outline: {
-                  // makes the outlines of all features consistently light gray
                   color: "#545955",
                   width: 1,
                   style: "solid"    
                 }
               }
             }
-        })  
+        });
         
         // Set Scene View
           
@@ -454,6 +453,9 @@
                   buttonEnabled: false,
                   breakpoint: false
               } 
+          },
+          ui: {
+            components: [""]
           },    
           environment: {
             background:{
@@ -658,227 +660,269 @@
                 $("#r_name").removeClass('pressed', 0);
             }
         });    
-          
-          
-          
-        ///////////////Setup Map UI/////////////////
-          
-            var addSearch = new Search({
-              view: view,
-              includeDefaultSources: false,
-              container: "addSearch",
-              popupEnabled: false,   
-              locationEnabled: false,   
-              sources: [
-                {
-                  locator: new Locator({
-                    url: "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer" 
-                  }),
-                  filter: {
-                        geometry: new Polygon({
-                            "rings": [
-                              [
-                                [
-                              -83.75976562499999,
-                              36.54494944148322
-                            ],
-                            [
-                              -75.772705078125,
-                              36.491973470593685
-                            ],
-                            [
-                              -75.750732421875,
-                              37.16031654673677
-                            ],
-                            [
-                              -75.16845703124999,
-                              38.06539235133249
-                            ],
-                            [
-                              -76.256103515625,
-                              38.013476231041935
-                            ],
-                            [
-                              -76.86035156249999,
-                              38.41055825094609
-                            ],
-                            [
-                              -76.6845703125,
-                              38.831149809348744
-                            ],
-                            [
-                              -77.607421875,
-                              39.410733055084954
-                            ],
-                            [
-                              -77.87109375,
-                              39.30029918615029
-                            ],
-                            [
-                              -78.431396484375,
-                              39.58029027440865
-                            ],
-                            [
-                              -78.837890625,
-                              39.01918369029134
-                            ],
-                            [
-                              -79.07958984375,
-                              38.98503278695909
-                            ],
-                            [
-                              -79.310302734375,
-                              38.59970036588819
-                            ],
-                            [
-                              -79.716796875,
-                              38.7283759182398
-                            ],
-                            [
-                              -80.474853515625,
-                              37.63163475580643
-                            ],
-                            [
-                              -81.23291015625,
-                              37.405073750176925
-                            ],
-                            [
-                              -81.650390625,
-                              37.35269280367274
-                            ],
-                            [
-                              -81.968994140625,
-                              37.65773212628272
-                            ],
-                            [
-                              -82.36450195312499,
-                              37.45741810262938
-                            ],
-                            [
-                              -82.99072265625,
-                              37.020098201368114
-                            ],
-                            [
-                              -83.70483398437499,
-                              36.69485094156225
-                            ],
-                            [
-                              -83.75976562499999,
-                              36.54494944148322
-                            ]
-                              ]
-                            ],
-                            "spatialReference": {
-                              "wkid": 4326
-                            }
-                          }) 
-                    },
-                  name: "Search by Address or Place",
-                  placeholder: "Enter an Address or Place",
-                  zoomScale: 15000,
-                    resultSymbol: {
-                        type: "simple-marker",  
-                        style: "circle",
-                        color: "#3288bd",
-                        size: 15, 
-                        outline: { 
-                        color: "#9e0142",
-                        width: 5 
-                        }                  
-                    }   
-                }  
-              ]
+              
+        //****Info Window****//
+
+          $(document).ready(function(){
+            $("#infoButton").click(function(){
+              $("#infoDiv").fadeToggle(500);
+              $('#legendDiv').css({'display': 'none'})
             });
-          
-            var wordSearch = new Search({
+          });
+
+        //****Legend Window****//
+
+        $(document).ready(function(){
+          $("#legendButton").click(function(){
+            $("#legendDiv").fadeToggle(500);
+            $('#infoDiv').css({'display': 'none'})
+          });
+        });
+
+        //****Search Functionality****//
+            /*$( document ).ready(function() {
+              $("#searchOnOff").click(function() {
+                $("#searchDiv").slideToggle("slow");
+              });
+            });*/
+
+
+            const searchButton = document.getElementById("searchButton");
+            let state = 1;
+            searchButton.addEventListener("click", function() {
+              
+              if (state == 1) {
+                wordSearch.popupEnabled = false;
+                wordSearch.sources = address;
+                wordSearch.allPlaceholder = "Enter an Address";
+                $(".searchTitle").html("Search by Address");
+                wordSearch.clear();
+                state = 0;
+              } else if (state != 1 ) {
+                wordSearch.popupEnabled = true;
+                wordSearch.sources = words;
+                wordSearch.allPlaceholder = "Enter an Keyword";
+                $(".searchTitle").html("Search by Keyword");
+                wordSearch.clear();
+                state = 1;
+              } else {
+                wordSearch.popupEnabled = true;
+                wordSearch.sources = words;
+                wordSearch.allPlaceholder = "Enter an Keyword";
+              };
+            });
+
+            const address = [
+              {
+                locator: new Locator({
+                  url: "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer" 
+                }),
+                filter: {
+                      geometry: new Polygon({
+                          "rings": [
+                            [
+                              [
+                            -83.75976562499999,
+                            36.54494944148322
+                          ],
+                          [
+                            -75.772705078125,
+                            36.491973470593685
+                          ],
+                          [
+                            -75.750732421875,
+                            37.16031654673677
+                          ],
+                          [
+                            -75.16845703124999,
+                            38.06539235133249
+                          ],
+                          [
+                            -76.256103515625,
+                            38.013476231041935
+                          ],
+                          [
+                            -76.86035156249999,
+                            38.41055825094609
+                          ],
+                          [
+                            -76.6845703125,
+                            38.831149809348744
+                          ],
+                          [
+                            -77.607421875,
+                            39.410733055084954
+                          ],
+                          [
+                            -77.87109375,
+                            39.30029918615029
+                          ],
+                          [
+                            -78.431396484375,
+                            39.58029027440865
+                          ],
+                          [
+                            -78.837890625,
+                            39.01918369029134
+                          ],
+                          [
+                            -79.07958984375,
+                            38.98503278695909
+                          ],
+                          [
+                            -79.310302734375,
+                            38.59970036588819
+                          ],
+                          [
+                            -79.716796875,
+                            38.7283759182398
+                          ],
+                          [
+                            -80.474853515625,
+                            37.63163475580643
+                          ],
+                          [
+                            -81.23291015625,
+                            37.405073750176925
+                          ],
+                          [
+                            -81.650390625,
+                            37.35269280367274
+                          ],
+                          [
+                            -81.968994140625,
+                            37.65773212628272
+                          ],
+                          [
+                            -82.36450195312499,
+                            37.45741810262938
+                          ],
+                          [
+                            -82.99072265625,
+                            37.020098201368114
+                          ],
+                          [
+                            -83.70483398437499,
+                            36.69485094156225
+                          ],
+                          [
+                            -83.75976562499999,
+                            36.54494944148322
+                          ]
+                            ]
+                          ],
+                          "spatialReference": {
+                            "wkid": 4326
+                          }
+                        }) 
+                  },
+                name: "Search by Address or Place",
+                placeholder: "Enter an Address or Place",
+                zoomScale: 15000,
+                  resultSymbol: {
+                      type: "simple-marker",  
+                      style: "circle",
+                      color: "#3288bd",
+                      size: 15, 
+                      outline: { 
+                      color: "#9e0142",
+                      width: 5 
+                      }                  
+                  }   
+              }  
+            ];
+
+            const words = [
+              {
+                  layer: BH,
+                  searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+                  displayField: "MarkerNme",
+                  exactMatch: false,
+                  //placeholder: "Enter a District Name",
+                  name: "Black History",
+              },
+              {
+                  layer: BP,
+                  searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+                  displayField: "MarkerNme",
+                  exactMatch: false,
+                  //placeholder: "Enter a District Name",
+                  name: "Places",
+              },
+              {
+                  layer: CW,
+                  searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+                  displayField: "MarkerNme",
+                  exactMatch: false,
+                  //placeholder: "Enter a District Name",
+                  name: "Civil War",
+              },
+              {
+                  layer: CF,
+                  searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+                  displayField: "MarkerNme",
+                  exactMatch: false,
+                  //placeholder: "Enter a District Name",
+                  name: "Colonial History",
+              },
+              {
+                  layer: CI,
+                  searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+                  displayField: "MarkerNme",
+                  exactMatch: false,
+                  //placeholder: "Enter a District Name",
+                  name: "Industrial History",
+              },
+              {
+                  layer: COMM,
+                  searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+                  displayField: "MarkerNme",
+                  exactMatch: false,
+                  //placeholder: "Enter a District Name",
+                  name: "Cities & Counties",
+              },
+              {
+                  layer: INST,
+                  searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+                  displayField: "MarkerNme",
+                  exactMatch: false,
+                  //placeholder: "Enter a District Name",
+                  name: "Institutions",
+              },
+              {
+                  layer: NA,
+                  searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+                  displayField: "MarkerNme",
+                  exactMatch: false,
+                  //placeholder: "Enter a District Name",
+                  name: "Native America History",
+              },
+              {
+                  layer: PEOPLE,
+                  searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+                  displayField: "MarkerNme",
+                  exactMatch: false,
+                  //placeholder: "Enter a District Name",
+                  name: "People",
+              },
+              {
+                  layer: REV,
+                  searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+                  displayField: "MarkerNme",
+                  exactMatch: false,
+                  //placeholder: "Enter a District Name",
+                  name: "Revolution & War of 1812",
+              }  
+            ];
+
+            const wordSearch = new Search({
               view: view,
               includeDefaultSources: false,
               container: "wordSearch",
               popupEnabled: true,
               allPlaceholder: "Enter a Keyword",    
               locationEnabled: false,   
-              sources: [
-                {
-                    layer: BH,
-                    searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
-                    displayField: "MarkerNme",
-                    exactMatch: false,
-                    //placeholder: "Enter a District Name",
-                    name: "Black History",
-                },
-                {
-                    layer: BP,
-                    searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
-                    displayField: "MarkerNme",
-                    exactMatch: false,
-                    //placeholder: "Enter a District Name",
-                    name: "Places",
-                },
-                {
-                    layer: CW,
-                    searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
-                    displayField: "MarkerNme",
-                    exactMatch: false,
-                    //placeholder: "Enter a District Name",
-                    name: "Civil War",
-                },
-                {
-                    layer: CF,
-                    searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
-                    displayField: "MarkerNme",
-                    exactMatch: false,
-                    //placeholder: "Enter a District Name",
-                    name: "Colonial History",
-                },
-                {
-                    layer: CI,
-                    searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
-                    displayField: "MarkerNme",
-                    exactMatch: false,
-                    //placeholder: "Enter a District Name",
-                    name: "Industrial History",
-                },
-                {
-                    layer: COMM,
-                    searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
-                    displayField: "MarkerNme",
-                    exactMatch: false,
-                    //placeholder: "Enter a District Name",
-                    name: "Cities & Counties",
-                },
-                {
-                    layer: INST,
-                    searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
-                    displayField: "MarkerNme",
-                    exactMatch: false,
-                    //placeholder: "Enter a District Name",
-                    name: "Institutions",
-                },
-                {
-                    layer: NA,
-                    searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
-                    displayField: "MarkerNme",
-                    exactMatch: false,
-                    //placeholder: "Enter a District Name",
-                    name: "Native America History",
-                },
-                {
-                    layer: PEOPLE,
-                    searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
-                    displayField: "MarkerNme",
-                    exactMatch: false,
-                    //placeholder: "Enter a District Name",
-                    name: "People",
-                },
-                {
-                    layer: REV,
-                    searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
-                    displayField: "MarkerNme",
-                    exactMatch: false,
-                    //placeholder: "Enter a District Name",
-                    name: "Revolution & War of 1812",
-                }  
-              ]
+              sources: words
             });
           
         wordSearch.on("select-result", function(){
@@ -887,34 +931,45 @@
             })
         });
           
-        const infoElement = document.getElementById("infoDiv");
+        var zoom = new Zoom({
+          view: view,
+          layout: "horizontal",
+          container: "zoomButtons"
+        });   
+      
+        var homeBtn = new Home({
+          view: view,
+          container: "homeButton"
+        });
+
+        //const infoElement = document.getElementById("infoDiv");
         
-        var exandWidget = new Expand ({
+        /*var exandWidget = new Expand ({
             view: view,
             content: infoElement,
             expandIconClass: "esri-icon-question"
-        });
+        });*/
           
        
           
-        var homeBtn = new Home({
+        /*var homeBtn = new Home({
             view: view
-        });  
+        });*/  
           
-        var zoom = new Zoom({
+        /*var zoom = new Zoom({
             view: view,
             layout: "horizontal"
-        })  
+        })*/  
 
-        view.ui.add(homeBtn, "bottom-left");
+        //view.ui.add(homeBtn, "bottom-left");
           
-        view.ui.add(exandWidget, "bottom-left");  
+        //view.ui.add(exandWidget, "bottom-left");  
     
-        view.ui.move("zoom", 'bottom-right');
+        //view.ui.move("zoom", 'bottom-right');
         
-        view.ui.remove("compass");  
+        //view.ui.remove("compass");  
 
-        view.ui.move("navigation-toggle", "bottom-right"); 
+        //view.ui.move("navigation-toggle", "bottom-right"); 
                     
 });
         
