@@ -17,8 +17,8 @@ html, body {
     height: 10px;
     width: 800px;
     z-index: 1001;
-    top: 10px;
-    left: 40px;
+    top: 20px;
+    left: 20px;
     position: absolute;
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
@@ -29,8 +29,8 @@ html, body {
     height: 10px;
     width: 800px;
     z-index: 1001;
-    top: 60px;
-    left: 40px;
+    top: 70px;
+    left: 20px;
     position: absolute;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
@@ -41,8 +41,8 @@ html, body {
     height: 10px;
     width: 800px;
     z-index: 1100;
-    top: 100px;
-    left: 40px;
+    top: 110px;
+    left: 20px;
     position: absolute;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
@@ -74,21 +74,18 @@ h2 {
    font-family: 'Roboto', sans-serif;
    font-weight: 600 !important;
    font-size: 20px !important;
-   padding-left: 6px;
 }
 
 h3 {
    font-family: 'Roboto', sans-serif;
    font-weight: 400 !important;
-   font-size: 15px !important;
-   padding-left: 7px;   
+   font-size: 15px !important;  
 }
 
 h4 {
    font-family: 'Roboto', sans-serif;
    font-weight: 400 !important;
    font-size: 13px !important;
-   padding-left: 7px; 
 }
 
 a {
@@ -104,8 +101,8 @@ a:hover {
 
 #searchDiv {
     position: absolute;
-    left: 40px;
-    top: 230px;
+    left: 20px;
+    top: 240px;
     width: 350px;
     z-index: 300;
     display: visible;
@@ -259,8 +256,8 @@ a:hover {
     height: 90px;
     width: 750px;
     z-index: 1001;
-    top: 130px;
-    left: 30px;
+    top: 140px;
+    left: 15px;
     position: absolute;
     background-color: transparent;
     display:flex;
@@ -359,6 +356,7 @@ a:hover {
     border-radius: 10px !important;
     border: 2px solid #000;
     width: 600px !important;
+    bottom: 35px;
     height: auto;
 }
 
@@ -571,7 +569,7 @@ div {
         width: calc(100% - 30px);
         top: 15px;
         left: 15px;
-        font-size: 7.35vw;
+        font-size: 7.35vw !important;
         color: black;
     }
     
@@ -592,9 +590,9 @@ div {
     }
 
     #searchDiv {
-        left: 15px;
+        left: 15px !important;
         width: calc(100% - 30px) !important;
-        top: 120px;
+        top: 115px !important;
         display: none;
     }
 
@@ -605,8 +603,8 @@ div {
     }
 
     #toggleText{
-        top: 54px;
-        left: 15px;
+        top: 54px !important;
+        left: 15px !important;
         font-size: 14px;
         font-weight: 700; 
         width: 200px !important;
@@ -614,10 +612,11 @@ div {
 
     #menu {
         position: absolute;
-        left: 15px;
+        left: 15px !important;
         height: 30px;
-        width: calc(100% - 30px);
-        top: 80px;
+        width: calc(100% - 30px) !important;
+        min-width: calc(100% - 30px) !important;
+        top: 80px !important;
     }
 
     .black_history, .building, .civil, .colonial, .indust, .comm, .instit, .na, .people, .rev {
@@ -634,16 +633,24 @@ div {
     }
 
     .esri-popup__main-container {
-        margin-bottom: 65px !important;
-        margin-left: 15px !important;
-        width: calc(100% - 30px) !important;
-        max-height: 250px !important;
+        margin-bottom: 0px !important;
+        width: 100%;
+        /*width: calc(100% - 30px) !important;*/
+        max-height: 200px !important;
     }
 
-   /* div {
-        padding-right: 2px !important;
+    .esri-popup__button {
+        margin: 2px 0 !important;
+    }
+
+    .esri-popup__header {
+        padding: 0px !important;
+    }
+
+    .popCon {
+        padding-right: 10px !important;
         text-align: justify;
-    } */
+    } 
 
     h1 {
         font-size: 20px !important;
@@ -651,10 +658,16 @@ div {
 
     h2{
         font-size: 16px !important;
+        margin-bottom: 10px;
     }
 
     h3 {
         font-size: 12px !important;
+    }
+
+    h4 {
+        margin-top: 7px;
+        margin-bottom: 7px;
     }
 
     .popIcon {
@@ -697,4 +710,124 @@ div {
         align-items: center;
         background-image: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1));
       }
+}
+
+
+/*@media (max-width: 780px) {
+    #title{
+        height: 10px;
+        width: calc(100% - 30px);
+        top: 15px;
+        left: 15px;
+        font-size:40px;
+        color: black;
+    }
+
+    #subTitle{
+        font-size: 20px;
+        left: 15px;
+    }
+
+    #toggleText {
+        left: 15px;
+        font-size: 14px;
+        top: 95px;
+    }
+    
+    #menu {
+        position: absolute;
+        left: 10px;
+        height: 30px;
+        width: calc(100% - 100px);
+        top: 125px;
+    }
+
+    .black_history, .building, .civil, .colonial, .indust, .comm, .instit, .na, .people, .rev {
+        width: 60% ;
+    }
+
+    #bh_name, #p_name, #cw_name, #ch_name, #i_name, #cc_name, #inst_name, #na_name, #pe_name, #r_name { 
+        font-size: 12px;
+    }
+
+    #searchDiv {
+        left: 15px;
+        top: 215px;
+    }
+
+}*/
+
+
+
+@media (max-width: 1500px) {
+    .esri-popup__main-container {
+        width: 400px !important;
+        max-height: 250px !important;
+    }
+
+    h1 {
+        font-size: 20px !important;
+    }
+
+    h2{
+        font-size: 16px !important;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        font-size: 12px !important;
+    }
+
+    h4 {
+        margin-top: 7px;
+        margin-bottom: 7px;
+    }
+
+    .popIcon {
+        width: 45px;
+        height: 45px;
+    }
+
+    #title{
+        height: 10px;
+        width: calc(100% - 30px);
+        top: 15px;
+        left: 15px;
+        font-size:40px;
+        color: black;
+    }
+
+    #subTitle{
+        font-size: 20px;
+        left: 15px;
+    }
+
+    #toggleText {
+        left: 15px;
+        font-size: 14px;
+        top: 95px;
+    }
+    
+    #menu {
+        position: absolute;
+        left: 10px;
+        height: 30px;
+        width: 65%;
+        min-width: 600px;
+        top: 125px;
+    }
+
+    .black_history, .building, .civil, .colonial, .indust, .comm, .instit, .na, .people, .rev {
+        width: 65% ;
+    }
+
+    #bh_name, #p_name, #cw_name, #ch_name, #i_name, #cc_name, #inst_name, #na_name, #pe_name, #r_name { 
+        font-size: 12px;
+    }
+
+    #searchDiv {
+        left: 15px;
+        top: 215px;
+    }
+    
 }

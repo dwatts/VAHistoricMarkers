@@ -64,7 +64,7 @@
             var icon = "<img class='popIcon' alt='' src='img/Black_History.png'/>";
             var popupElement = document.createElement("div");
             
-            popupElement.innerHTML = "<table><tbody><tr><td>" + icon + "</td><td><h1>Black History</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4>";
+            popupElement.innerHTML = "<div class='popCon'><table><tbody><tr><td>" + icon + "</td><td><h1>Black History</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4></div>";
             
             return popupElement;
         }  
@@ -87,7 +87,7 @@
             var icon = "<img class='popIcon' alt='' src='img/Buildings_Places.png'/>";
             var popupElement = document.createElement("div");
             
-            popupElement.innerHTML = "<table><tbody><tr><td>" + icon + "</td><td><h1>Buildings & Places</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4>";
+            popupElement.innerHTML = "<div class='popCon'><table><tbody><tr><td>" + icon + "</td><td><h1>Places</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4></div>";
             
             return popupElement; 
         }
@@ -110,7 +110,7 @@
             var icon = "<img class='popIcon' alt='' src='img/Civil.png'/>";
             var popupElement = document.createElement("div");
             
-            popupElement.innerHTML = "<table><tbody><tr><td>" + icon + "</td><td><h1>Civil War</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4>";
+            popupElement.innerHTML = "<div class='popCon'><table><tbody><tr><td>" + icon + "</td><td><h1>Civil War</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4></div>";
             
             return popupElement;
         }  
@@ -133,7 +133,7 @@
             var icon = "<img class='popIcon' alt='' src='img/Colonial.png'/>";
             var popupElement = document.createElement("div");
             
-            popupElement.innerHTML = "<table><tbody><tr><td>" + icon + "</td><td><h1>Colonial  History</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4>";
+            popupElement.innerHTML = "<div class='popCon'><table><tbody><tr><td>" + icon + "</td><td><h1>Colonial History</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4></div>";
             
             return popupElement; 
         }
@@ -156,7 +156,7 @@
             var icon = "<img class='popIcon' alt='' src='img/CommIndust.png'/>";
             var popupElement = document.createElement("div");
             
-            popupElement.innerHTML = "<table><tbody><tr><td>" + icon + "</td><td><h1>Industrial</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4>";
+            popupElement.innerHTML = "<div class='popCon'><table><tbody><tr><td>" + icon + "</td><td><h1>Industries</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4></div>";
             
             return popupElement; 
         }  
@@ -179,7 +179,7 @@
             var icon = "<img class='popIcon' alt='' src='img/Communities.png'/>";
             var popupElement = document.createElement("div");
             
-            popupElement.innerHTML = "<table><tbody><tr><td>" + icon + "</td><td><h1>Cities & Counties</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4>";
+            popupElement.innerHTML = "<div class='popCon'><table><tbody><tr><td>" + icon + "</td><td><h1>City & Counties</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4></div>";
             
             return popupElement; 
         }
@@ -202,7 +202,7 @@
             var icon = "<img class='popIcon' alt='' src='img/Institutions.png'/>";
             var popupElement = document.createElement("div");
             
-            popupElement.innerHTML = "<table><tbody><tr><td>" + icon + "</td><td><h1>Institutions</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4>";
+            popupElement.innerHTML = "<div class='popCon'><table><tbody><tr><td>" + icon + "</td><td><h1>Institutions</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4></div>";
             
             return popupElement; 
         }
@@ -225,7 +225,7 @@
             var icon = "<img class='popIcon' alt='' src='img/Native_American.png'/>";
             var popupElement = document.createElement("div");
             
-            popupElement.innerHTML = "<table><tbody><tr><td>" + icon + "</td><td><h1>Native American History</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4>";
+            popupElement.innerHTML = "<div class='popCon'><table><tbody><tr><td>" + icon + "</td><td><h1>Native American History</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4></div>";
             
             return popupElement; 
         }
@@ -248,7 +248,7 @@
             var icon = "<img class='popIcon' alt='' src='img/People.png'/>";
             var popupElement = document.createElement("div");
             
-            popupElement.innerHTML = "<table><tbody><tr><td>" + icon + "</td><td><h1>People</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4>";
+            popupElement.innerHTML = "<div class='popCon'><table><tbody><tr><td>" + icon + "</td><td><h1>People</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4></div>";
             
             return popupElement; 
         }
@@ -271,7 +271,7 @@
             var icon = "<img class='popIcon' alt='' src='img/Revolution.png'/>";
             var popupElement = document.createElement("div");
             
-            popupElement.innerHTML = "<table><tbody><tr><td>" + icon + "</td><td><h1>Revolution & War of 1812</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4>";
+            popupElement.innerHTML = "<div class='popCon'><table><tbody><tr><td>" + icon + "</td><td><h1>Revolution & War of 1812</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4></div>";
             
             return popupElement; 
         }
@@ -451,7 +451,8 @@
               dockEnabled: true,
               dockOptions: {
                   buttonEnabled: false,
-                  breakpoint: false
+                  breakpoint: false,
+                  position: "bottom-right"
               } 
           },
           ui: {
