@@ -206,8 +206,8 @@ a:hover {
     height: 25%;
     min-height: 200px;
     position: fixed;
-    top: 0;
-    bottom: 0;
+    /*top: 0;*/
+    bottom: 65px;
     left: 0;
     right: 0;
     margin: auto;
@@ -450,6 +450,23 @@ div {
     cursor: pointer;
 }
 
+#findButton {
+    display: none;
+    color: #000 !important;
+    background-color: #fff !important;
+    border: 3px solid #000 !important;
+    border-radius: 50% !important;
+    margin-top: 0px !important;
+    padding: 5px;
+    margin-left: 5px;
+ }
+ 
+ #findButton:hover {
+     background-color: #d53e4f !important;
+     color: #000 !important;
+     cursor: pointer;
+ }
+
 .esri-icon-question {
     color: #000 !important;
     background-color: #fff !important;
@@ -566,14 +583,19 @@ div {
         display: block;
     }
 
+    #findButton {
+        display: block;
+    }
+
     #othButtonDiv {
-        width: 108px;
+        width: 138px;
     }
 
     #searchDiv {
         left: 15px;
         width: calc(100% - 30px) !important;
         top: 120px;
+        display: none;
     }
 
     .searchTitle {
@@ -642,10 +664,10 @@ div {
 
     #infoDiv {
         width: 86%;
-        height: 40%;
+        height: 60%;
         position: fixed;
-        top:0;
-        bottom: 0;
+        /*top:0;*/
+        bottom: 65px;
         left: 0;
         right: 0;
         margin: auto;

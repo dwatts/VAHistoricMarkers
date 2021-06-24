@@ -680,11 +680,11 @@
         });
 
         //****Search Functionality****//
-            /*$( document ).ready(function() {
-              $("#searchOnOff").click(function() {
+            $( document ).ready(function() {
+              $("#findButton").click(function() {
                 $("#searchDiv").slideToggle("slow");
               });
-            });*/
+            });
 
 
             const searchButton = document.getElementById("searchButton");
