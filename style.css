@@ -826,6 +826,7 @@ div {
         left: 15px;
         font-size: 14px;
         top: 45px;
+        font-weight: 700;
     }
 
     .fa-question-circle {
@@ -885,6 +886,14 @@ div {
         right: 0;
         margin: auto;
         z-index: 1100;
+    }
+
+    #othButtonDiv {
+        bottom: 10px;
+    }
+
+    #zoomButtonDiv {
+        bottom: 10px;
     }
 
     .infoContent {
