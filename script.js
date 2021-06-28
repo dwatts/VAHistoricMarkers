@@ -22,7 +22,7 @@
           
         var ExaggeratedElevationLayer = BaseElevationLayer.createSubclass({
           properties: {
-            exaggeration: 3
+            exaggeration: 2.5
           },
           load: function() {
             this._elevation = new ElevationLayer({
@@ -47,13 +47,12 @@
         //Add Layers to Map and Set Popup Info//  
           
         const BH = new FeatureLayer({
-          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_Near/FeatureServer",
+          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_FINAL/FeatureServer",
           renderer: signRenderer,
           definitionExpression: "NoLatLng <> 'FLAG' AND Tag = 'Black_History'",
           visibility: true,
           popupTemplate: {
             outFields: ["*"],
-              //title: "{name_e}",
               content: function (feature) {
                 return setContentInfoBH(feature.graphic.attributes);
               },    
@@ -67,16 +66,15 @@
             popupElement.innerHTML = "<div class='popCon'><table><tbody><tr><td>" + icon + "</td><td><h1>Black History</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4></div>";
             
             return popupElement;
-        }  
+        };  
           
         const BP = new FeatureLayer({
-          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_Near/FeatureServer",
+          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_FINAL/FeatureServer",
           renderer: signRenderer,
           definitionExpression: "NoLatLng <> 'FLAG' AND Tag = 'Building_Places'",
           visibility: true,            
           popupTemplate: {
             outFields: ["*"],
-              //title: "{name_e}",
               content: function (feature) {
                 return setContentBP(feature.graphic.attributes);
               },    
@@ -90,16 +88,15 @@
             popupElement.innerHTML = "<div class='popCon'><table><tbody><tr><td>" + icon + "</td><td><h1>Places</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4></div>";
             
             return popupElement; 
-        }
+        };
         
         const CW = new FeatureLayer({
-          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_Near/FeatureServer",
+          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_FINAL/FeatureServer",
           renderer: signRenderer,
           definitionExpression: "NoLatLng <> 'FLAG' AND Tag = 'Civil_War'",
           visibility: true,            
           popupTemplate: {
             outFields: ["*"],
-              //title: "{name_e}",
               content: function (feature) {
                 return setContentCW(feature.graphic.attributes);
               },    
@@ -113,16 +110,15 @@
             popupElement.innerHTML = "<div class='popCon'><table><tbody><tr><td>" + icon + "</td><td><h1>Civil War</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4></div>";
             
             return popupElement;
-        }  
+        };  
           
         const CF = new FeatureLayer({
-          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_Near/FeatureServer",
+          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_FINAL/FeatureServer",
           renderer: signRenderer,
           definitionExpression: "NoLatLng <> 'FLAG' AND Tag = 'Colonial_Frontier'",
           visibility: true,            
             popupTemplate: {
             outFields: ["*"],
-              //title: "{name_e}",
               content: function (feature) {
                 return setContentCF(feature.graphic.attributes);
               },    
@@ -136,16 +132,15 @@
             popupElement.innerHTML = "<div class='popCon'><table><tbody><tr><td>" + icon + "</td><td><h1>Colonial History</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4></div>";
             
             return popupElement; 
-        }
+        };
         
         const CI = new FeatureLayer({
-          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_Near/FeatureServer",
+          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_FINAL/FeatureServer",
           renderer: signRenderer,
           definitionExpression: "NoLatLng <> 'FLAG' AND Tag = 'Commerce_Industry'",
           visibility: true,            
             popupTemplate: {
             outFields: ["*"],
-              //title: "{name_e}",
               content: function (feature) {
                 return setContentCI(feature.graphic.attributes);
               },    
@@ -156,19 +151,18 @@
             var icon = "<img class='popIcon' alt='' src='img/CommIndust.png'/>";
             var popupElement = document.createElement("div");
             
-            popupElement.innerHTML = "<div class='popCon'><table><tbody><tr><td>" + icon + "</td><td><h1>Industries</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4></div>";
+            popupElement.innerHTML = "<div class='popCon'><table><tbody><tr><td>" + icon + "</td><td><h1>Industry & Commerce</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4></div>";
             
             return popupElement; 
-        }  
+        };
           
         const COMM = new FeatureLayer({
-          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_Near/FeatureServer",
+          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_FINAL/FeatureServer",
           renderer: signRenderer,
           definitionExpression: "NoLatLng <> 'FLAG' AND Tag = 'Communities'",
           visibility: true,            
             popupTemplate: {
             outFields: ["*"],
-              //title: "{name_e}",
               content: function (feature) {
                 return setContentComm(feature.graphic.attributes);
               },    
@@ -179,19 +173,18 @@
             var icon = "<img class='popIcon' alt='' src='img/Communities.png'/>";
             var popupElement = document.createElement("div");
             
-            popupElement.innerHTML = "<div class='popCon'><table><tbody><tr><td>" + icon + "</td><td><h1>City & Counties</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4></div>";
+            popupElement.innerHTML = "<div class='popCon'><table><tbody><tr><td>" + icon + "</td><td><h1>Cities & Counties</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4></div>";
             
             return popupElement; 
-        }
+        };
           
         const INST = new FeatureLayer({
-          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_Near/FeatureServer",
+          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_FINAL/FeatureServer",
           renderer: signRenderer,
           definitionExpression: "NoLatLng <> 'FLAG' AND Tag = 'Institutions'",
           visibility: true,            
             popupTemplate: {
             outFields: ["*"],
-              //title: "{name_e}",
               content: function (feature) {
                 return setContentInst(feature.graphic.attributes);
               },    
@@ -205,16 +198,15 @@
             popupElement.innerHTML = "<div class='popCon'><table><tbody><tr><td>" + icon + "</td><td><h1>Institutions</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4></div>";
             
             return popupElement; 
-        }
+        };
           
         const NA = new FeatureLayer({
-          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_Near/FeatureServer",
+          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_FINAL/FeatureServer",
           renderer: signRenderer,
           definitionExpression: "NoLatLng <> 'FLAG' AND Tag = 'Native_American'",
           visibility: true,            
             popupTemplate: {
             outFields: ["*"],
-              //title: "{name_e}",
               content: function (feature) {
                 return setContentNA(feature.graphic.attributes);
               },    
@@ -228,16 +220,15 @@
             popupElement.innerHTML = "<div class='popCon'><table><tbody><tr><td>" + icon + "</td><td><h1>Native American History</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4></div>";
             
             return popupElement; 
-        }
+        };
           
         const PEOPLE = new FeatureLayer({
-          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_Near/FeatureServer",
+          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_FINAL/FeatureServer",
           renderer: signRenderer,
           definitionExpression: "NoLatLng <> 'FLAG' AND Tag = 'People'",
           visibility: true,            
             popupTemplate: {
             outFields: ["*"],
-              //title: "{name_e}",
               content: function (feature) {
                 return setContentPEOPLE(feature.graphic.attributes);
               },    
@@ -251,16 +242,15 @@
             popupElement.innerHTML = "<div class='popCon'><table><tbody><tr><td>" + icon + "</td><td><h1>People</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4></div>";
             
             return popupElement; 
-        }
+        };
           
         const REV = new FeatureLayer({
-          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_Near/FeatureServer",
+          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VADHR_Signage_FINAL/FeatureServer",
           renderer: signRenderer,
           definitionExpression: "NoLatLng <> 'FLAG' AND Tag = 'Revolution_1812'",
           visibility: true,            
             popupTemplate: {
             outFields: ["*"],
-              //title: "{name_e}",
               content: function (feature) {
                 return setContentREV(feature.graphic.attributes);
               },    
@@ -274,7 +264,7 @@
             popupElement.innerHTML = "<div class='popCon'><table><tbody><tr><td>" + icon + "</td><td><h1>Revolution & War of 1812</h1></td></tr></tbody><table><h2>" + results.MarkerNme + "</h2><h3>" + results.SgnTxt1 + results.SgnTxt2 + results.SgnTxt3 + results.SgnTxt4 + results.SgnTxt5 + results.SgnTxt6 + "</h3><h4>" + results.SignLine + "</h4></div>";
             
             return popupElement; 
-        }
+        };
           
         const smallLabel = {
               labelPlacement: "above-center",
@@ -344,7 +334,7 @@
                   color: [0, 0, 0, 1]
                 }
               }
-            }
+            };
           
         const vaCities = new FeatureLayer({
             url:"https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VA_Cities/FeatureServer",
@@ -367,10 +357,11 @@
                 }]
               }
             },
+            definitionExpression: "NAME <> 'Poquoson'",
             outFields: ["*"],
             screenSizePerspectiveEnabled: true,
             labelingInfo: [smallLabel]
-          });
+        });
         
         const mapBaseLayerTwo = new WebTileLayer({
           urlTemplate: "https://stamen-tiles-{subDomain}.a.ssl.fastly.net/terrain/{level}/{col}/{row}.png",
@@ -382,9 +373,7 @@
             'under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
         });
 
-        // Create a Basemap with the WebTileLayer. The thumbnailUrl will be used for
-        // the image in the BasemapToggle widget.
-        var stamen = new Basemap({
+        const stamen = new Basemap({
           baseLayers: [mapBaseLayerTwo],
           title: "Terrain",
           id: "terrain",
@@ -401,13 +390,23 @@
             'under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
         });
 
-        // Create a Basemap with the WebTileLayer. The thumbnailUrl will be used for
-        // the image in the BasemapToggle widget.
-        var stamenBackground = new Basemap({
+        const stamenBackground = new Basemap({
           baseLayers: [mapBaseLayer],
           title: "Terrain-Background",
           id: "terrain-background",
           thumbnailUrl: "https://stamen-tiles.a.ssl.fastly.net/terrain-background/10/177/409.png"
+        });
+
+
+        const counties = new FeatureLayer({
+          url: "https://services5.arcgis.com/CmuSiXApoWtqLYty/arcgis/rest/services/VA_Counties/FeatureServer",
+          maxScale: 0,
+          minScale: 0,
+          opacity: 1,
+          elevationInfo: {
+            mode: "on-the-ground",    
+          },
+          renderer: countyRenderOne, 
         });
           
         const mask = new FeatureLayer({
@@ -427,10 +426,10 @@
             }
         });
         
-        // Set Scene View
+      // Set Scene View //
           
        var webscene = new WebScene({
-            layers: [BH, BP, CW, CF, CI, COMM, INST, NA, PEOPLE, REV, mask, vaCities],
+            layers: [BH, BP, CW, CF, CI, COMM, INST, NA, PEOPLE, REV, counties, mask, vaCities],
             ground: {
                 layers: [new ExaggeratedElevationLayer()]
             },
@@ -481,28 +480,25 @@
                 max: 900000,
                 tilt: 0
               },
-              /*tilt: {
-                  max: 75
-              }*/
             }
         });
           
         view.popup.viewModel.actions = false;  
         
-        /////////////////////Scale Dependent Renderers////////////////////////
+        //Scale Dependent Renderers//
 
         view.when().then(function() {     
                 view.watch("scale", function(newValue) {
                 if (newValue <= 72224) {
-                    return [BH.renderer = signRendererFour, BP.renderer = signRendererFour, CW.renderer = signRendererFour, CF.renderer = signRendererFour, CI.renderer = signRendererFour, COMM.renderer = signRendererFour, INST.renderer = signRendererFour, NA.renderer = signRendererFour, PEOPLE.renderer = signRendererFour, REV.renderer = signRendererFour  ];
+                    return [BH.renderer = signRendererFour, BP.renderer = signRendererFour, CW.renderer = signRendererFour, CF.renderer = signRendererFour, CI.renderer = signRendererFour, COMM.renderer = signRendererFour, INST.renderer = signRendererFour, NA.renderer = signRendererFour, PEOPLE.renderer = signRendererFour, REV.renderer = signRendererFour, counties.renderer = countyRenderThree  ];
                 } else if (newValue > 72224 && newValue <= 288895) {
-                    return [BH.renderer = signRendererThree, BP.renderer = signRendererThree, CW.renderer = signRendererThree, CF.renderer = signRendererThree, CI.renderer = signRendererThree, COMM.renderer = signRendererThree, INST.renderer = signRendererThree, NA.renderer = signRendererThree, PEOPLE.renderer = signRendererThree, REV.renderer = signRendererThree];
+                    return [BH.renderer = signRendererThree, BP.renderer = signRendererThree, CW.renderer = signRendererThree, CF.renderer = signRendererThree, CI.renderer = signRendererThree, COMM.renderer = signRendererThree, INST.renderer = signRendererThree, NA.renderer = signRendererThree, PEOPLE.renderer = signRendererThree, REV.renderer = signRendererThree, counties.renderer = countyRenderThree ];
                 } else if (newValue > 288895 && newValue <= 1155581) {
-                    return [BH.renderer = signRendererTwo, BP.renderer = signRendererTwo, CW.renderer = signRendererTwo, CF.renderer = signRendererTwo, CI.renderer = signRendererTwo, COMM.renderer = signRendererTwo, INST.renderer = signRendererTwo, NA.renderer = signRendererTwo, PEOPLE.renderer = signRendererTwo, REV.renderer = signRendererTwo];
+                    return [BH.renderer = signRendererTwo, BP.renderer = signRendererTwo, CW.renderer = signRendererTwo, CF.renderer = signRendererTwo, CI.renderer = signRendererTwo, COMM.renderer = signRendererTwo, INST.renderer = signRendererTwo, NA.renderer = signRendererTwo, PEOPLE.renderer = signRendererTwo, REV.renderer = signRendererTwo, counties.renderer = countyRenderTwo ];
                 } else if (newValue > 1155581) {
-                    return [BH.renderer = signRenderer, BP.renderer = signRenderer, CW.renderer = signRenderer, CF.renderer = signRenderer, CI.renderer = signRenderer, COMM.renderer = signRenderer, INST.renderer = signRenderer, NA.renderer = signRenderer, PEOPLE.renderer = signRenderer, REV.renderer = signRenderer];
+                    return [BH.renderer = signRenderer, BP.renderer = signRenderer, CW.renderer = signRenderer, CF.renderer = signRenderer, CI.renderer = signRenderer, COMM.renderer = signRenderer, INST.renderer = signRenderer, NA.renderer = signRenderer, PEOPLE.renderer = signRenderer, REV.renderer = signRenderer, counties.renderer = countyRenderOne];
                 } else {
-                    return [BH.renderer = signRenderer, BP.renderer = signRenderer, CW.renderer = signRenderer, CF.renderer = signRenderer, CI.renderer = signRenderer, COMM.renderer = signRenderer, INST.renderer = signRenderer, NA.renderer = signRenderer, PEOPLE.renderer = signRenderer, REV.renderer = signRenderer] ;
+                    return [BH.renderer = signRenderer, BP.renderer = signRenderer, CW.renderer = signRenderer, CF.renderer = signRenderer, CI.renderer = signRenderer, COMM.renderer = signRenderer, INST.renderer = signRenderer, NA.renderer = signRenderer, PEOPLE.renderer = signRenderer, REV.renderer = signRenderer, , counties.renderer = countyRenderOne] ;
                 }
             })
         });
@@ -519,8 +515,7 @@
             })
         });  
     
-        
-        ///////////////Setup Catagory Buttons/////////////////  
+        //Setup Catagory Buttons//  
           
         var layerButton1 = document.getElementById("black_history_button");
 
@@ -662,7 +657,7 @@
             }
         });    
               
-        //****Info Window****//
+        //Info Window//
 
           $(document).ready(function(){
             $("#infoButton").click(function(){
@@ -671,7 +666,7 @@
             });
           });
 
-        //****Legend Window****//
+        //Legend Window//
 
         $(document).ready(function(){
           $("#legendButton").click(function(){
@@ -680,251 +675,241 @@
           });
         });
 
-        //****Search Functionality****//
-            $( document ).ready(function() {
-              $("#findButton").click(function() {
-                $("#searchDiv").slideToggle("slow");
-              });
-            });
+        //Search Functionality//
+        $( document ).ready(function() {
+          $("#findButton").click(function() {
+            $("#searchDiv").slideToggle("slow");
+          });
+        });
 
 
-            const searchButton = document.getElementById("searchButton");
-            let state = 1;
-            searchButton.addEventListener("click", function() {
-              
-              if (state == 1) {
-                wordSearch.popupEnabled = false;
-                wordSearch.sources = address;
-                wordSearch.allPlaceholder = "Enter an Address";
-                $(".searchTitle").html("Search by Address");
-                wordSearch.clear();
-                state = 0;
-              } else if (state != 1 ) {
-                wordSearch.popupEnabled = true;
-                wordSearch.sources = words;
-                wordSearch.allPlaceholder = "Enter an Keyword";
-                $(".searchTitle").html("Search by Keyword");
-                wordSearch.clear();
-                state = 1;
-              } else {
-                wordSearch.popupEnabled = true;
-                wordSearch.sources = words;
-                wordSearch.allPlaceholder = "Enter an Keyword";
-              };
-            });
+        const searchButton = document.getElementById("searchButton");
+        let state = 1;
+        searchButton.addEventListener("click", function() {
+          
+          if (state == 1) {
+            wordSearch.popupEnabled = false;
+            wordSearch.sources = address;
+            wordSearch.allPlaceholder = "Enter an Address";
+            $(".searchTitle").html("Search by Address");
+            wordSearch.clear();
+            state = 0;
+          } else if (state != 1 ) {
+            wordSearch.popupEnabled = true;
+            wordSearch.sources = words;
+            wordSearch.allPlaceholder = "Enter an Keyword";
+            $(".searchTitle").html("Search by Keyword");
+            wordSearch.clear();
+            state = 1;
+          } else {
+            wordSearch.popupEnabled = true;
+            wordSearch.sources = words;
+            wordSearch.allPlaceholder = "Enter an Keyword";
+          };
+        });
 
-            const address = [
-              {
-                locator: new Locator({
-                  url: "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer" 
-                }),
-                filter: {
-                      geometry: new Polygon({
-                          "rings": [
-                            [
-                              [
-                            -83.75976562499999,
-                            36.54494944148322
-                          ],
+        const address = [
+          {
+            locator: new Locator({
+              url: "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer" 
+            }),
+            filter: {
+                  geometry: new Polygon({
+                      "rings": [
+                        [
                           [
-                            -75.772705078125,
-                            36.491973470593685
-                          ],
-                          [
-                            -75.750732421875,
-                            37.16031654673677
-                          ],
-                          [
-                            -75.16845703124999,
-                            38.06539235133249
-                          ],
-                          [
-                            -76.256103515625,
-                            38.013476231041935
-                          ],
-                          [
-                            -76.86035156249999,
-                            38.41055825094609
-                          ],
-                          [
-                            -76.6845703125,
-                            38.831149809348744
-                          ],
-                          [
-                            -77.607421875,
-                            39.410733055084954
-                          ],
-                          [
-                            -77.87109375,
-                            39.30029918615029
-                          ],
-                          [
-                            -78.431396484375,
-                            39.58029027440865
-                          ],
-                          [
-                            -78.837890625,
-                            39.01918369029134
-                          ],
-                          [
-                            -79.07958984375,
-                            38.98503278695909
-                          ],
-                          [
-                            -79.310302734375,
-                            38.59970036588819
-                          ],
-                          [
-                            -79.716796875,
-                            38.7283759182398
-                          ],
-                          [
-                            -80.474853515625,
-                            37.63163475580643
-                          ],
-                          [
-                            -81.23291015625,
-                            37.405073750176925
-                          ],
-                          [
-                            -81.650390625,
-                            37.35269280367274
-                          ],
-                          [
-                            -81.968994140625,
-                            37.65773212628272
-                          ],
-                          [
-                            -82.36450195312499,
-                            37.45741810262938
-                          ],
-                          [
-                            -82.99072265625,
-                            37.020098201368114
-                          ],
-                          [
-                            -83.70483398437499,
-                            36.69485094156225
-                          ],
-                          [
-                            -83.75976562499999,
-                            36.54494944148322
-                          ]
-                            ]
-                          ],
-                          "spatialReference": {
-                            "wkid": 4326
-                          }
-                        }) 
-                  },
-                name: "Search by Address or Place",
-                placeholder: "Enter an Address or Place",
-                zoomScale: 15000,
-                  resultSymbol: {
-                      type: "simple-marker",  
-                      style: "circle",
-                      color: "#3288bd",
-                      size: 15, 
-                      outline: { 
-                      color: "#9e0142",
-                      width: 5 
-                      }                  
-                  }   
-              }  
-            ];
+                        -83.75976562499999,
+                        36.54494944148322
+                      ],
+                      [
+                        -75.772705078125,
+                        36.491973470593685
+                      ],
+                      [
+                        -75.750732421875,
+                        37.16031654673677
+                      ],
+                      [
+                        -75.16845703124999,
+                        38.06539235133249
+                      ],
+                      [
+                        -76.256103515625,
+                        38.013476231041935
+                      ],
+                      [
+                        -76.86035156249999,
+                        38.41055825094609
+                      ],
+                      [
+                        -76.6845703125,
+                        38.831149809348744
+                      ],
+                      [
+                        -77.607421875,
+                        39.410733055084954
+                      ],
+                      [
+                        -77.87109375,
+                        39.30029918615029
+                      ],
+                      [
+                        -78.431396484375,
+                        39.58029027440865
+                      ],
+                      [
+                        -78.837890625,
+                        39.01918369029134
+                      ],
+                      [
+                        -79.07958984375,
+                        38.98503278695909
+                      ],
+                      [
+                        -79.310302734375,
+                        38.59970036588819
+                      ],
+                      [
+                        -79.716796875,
+                        38.7283759182398
+                      ],
+                      [
+                        -80.474853515625,
+                        37.63163475580643
+                      ],
+                      [
+                        -81.23291015625,
+                        37.405073750176925
+                      ],
+                      [
+                        -81.650390625,
+                        37.35269280367274
+                      ],
+                      [
+                        -81.968994140625,
+                        37.65773212628272
+                      ],
+                      [
+                        -82.36450195312499,
+                        37.45741810262938
+                      ],
+                      [
+                        -82.99072265625,
+                        37.020098201368114
+                      ],
+                      [
+                        -83.70483398437499,
+                        36.69485094156225
+                      ],
+                      [
+                        -83.75976562499999,
+                        36.54494944148322
+                      ]
+                        ]
+                      ],
+                      "spatialReference": {
+                        "wkid": 4326
+                      }
+                    }) 
+              },
+            name: "Search by Address or Place",
+            placeholder: "Enter an Address or Place",
+            zoomScale: 15000,
+              resultSymbol: {
+                  type: "simple-marker",  
+                  style: "circle",
+                  color: "#3288bd",
+                  size: 15, 
+                  outline: { 
+                  color: "#9e0142",
+                  width: 5 
+                  }                  
+              }   
+          }  
+        ];
 
-            const words = [
-              {
-                  layer: BH,
-                  searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
-                  displayField: "MarkerNme",
-                  exactMatch: false,
-                  //placeholder: "Enter a District Name",
-                  name: "Black History",
-              },
-              {
-                  layer: BP,
-                  searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
-                  displayField: "MarkerNme",
-                  exactMatch: false,
-                  //placeholder: "Enter a District Name",
-                  name: "Places",
-              },
-              {
-                  layer: CW,
-                  searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
-                  displayField: "MarkerNme",
-                  exactMatch: false,
-                  //placeholder: "Enter a District Name",
-                  name: "Civil War",
-              },
-              {
-                  layer: CF,
-                  searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
-                  displayField: "MarkerNme",
-                  exactMatch: false,
-                  //placeholder: "Enter a District Name",
-                  name: "Colonial History",
-              },
-              {
-                  layer: CI,
-                  searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
-                  displayField: "MarkerNme",
-                  exactMatch: false,
-                  //placeholder: "Enter a District Name",
-                  name: "Industrial History",
-              },
-              {
-                  layer: COMM,
-                  searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
-                  displayField: "MarkerNme",
-                  exactMatch: false,
-                  //placeholder: "Enter a District Name",
-                  name: "Cities & Counties",
-              },
-              {
-                  layer: INST,
-                  searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
-                  displayField: "MarkerNme",
-                  exactMatch: false,
-                  //placeholder: "Enter a District Name",
-                  name: "Institutions",
-              },
-              {
-                  layer: NA,
-                  searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
-                  displayField: "MarkerNme",
-                  exactMatch: false,
-                  //placeholder: "Enter a District Name",
-                  name: "Native America History",
-              },
-              {
-                  layer: PEOPLE,
-                  searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
-                  displayField: "MarkerNme",
-                  exactMatch: false,
-                  //placeholder: "Enter a District Name",
-                  name: "People",
-              },
-              {
-                  layer: REV,
-                  searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
-                  displayField: "MarkerNme",
-                  exactMatch: false,
-                  //placeholder: "Enter a District Name",
-                  name: "Revolution & War of 1812",
-              }  
-            ];
+        const words = [
+          {
+              layer: BH,
+              searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+              displayField: "MarkerNme",
+              exactMatch: false,
+              name: "Black History",
+          },
+          {
+              layer: BP,
+              searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+              displayField: "MarkerNme",
+              exactMatch: false,
+              name: "Places",
+          },
+          {
+              layer: CW,
+              searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+              displayField: "MarkerNme",
+              exactMatch: false,
+              name: "Civil War",
+          },
+          {
+              layer: CF,
+              searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+              displayField: "MarkerNme",
+              exactMatch: false,
+              name: "Colonial History",
+          },
+          {
+              layer: CI,
+              searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+              displayField: "MarkerNme",
+              exactMatch: false,
+              name: "Industrial History",
+          },
+          {
+              layer: COMM,
+              searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+              displayField: "MarkerNme",
+              exactMatch: false,
+              name: "Cities & Counties",
+          },
+          {
+              layer: INST,
+              searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+              displayField: "MarkerNme",
+              exactMatch: false,
+              name: "Institutions",
+          },
+          {
+              layer: NA,
+              searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+              displayField: "MarkerNme",
+              exactMatch: false,
+              name: "Native American History",
+          },
+          {
+              layer: PEOPLE,
+              searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+              displayField: "MarkerNme",
+              exactMatch: false,
+              name: "People",
+          },
+          {
+              layer: REV,
+              searchFields: ["MarkerNme","SgnTxt1","SgnTxt2","SgnTxt3","SgnTxt4","SgnTxt5","SgnTxt6"],
+              displayField: "MarkerNme",
+              exactMatch: false,
+              name: "Revolution & War of 1812",
+          }  
+        ];
 
-            const wordSearch = new Search({
-              view: view,
-              includeDefaultSources: false,
-              container: "wordSearch",
-              popupEnabled: true,
-              allPlaceholder: "Enter a Keyword",    
-              locationEnabled: false,   
-              sources: words
-            });
+        const wordSearch = new Search({
+          view: view,
+          includeDefaultSources: false,
+          container: "wordSearch",
+          popupEnabled: true,
+          allPlaceholder: "Enter a Keyword",    
+          locationEnabled: false,   
+          sources: words
+        });
           
         wordSearch.on("select-result", function(){
             view.goTo({
@@ -942,35 +927,6 @@
           view: view,
           container: "homeButton"
         });
-
-        //const infoElement = document.getElementById("infoDiv");
-        
-        /*var exandWidget = new Expand ({
-            view: view,
-            content: infoElement,
-            expandIconClass: "esri-icon-question"
-        });*/
-          
-       
-          
-        /*var homeBtn = new Home({
-            view: view
-        });*/  
-          
-        /*var zoom = new Zoom({
-            view: view,
-            layout: "horizontal"
-        })*/  
-
-        //view.ui.add(homeBtn, "bottom-left");
-          
-        //view.ui.add(exandWidget, "bottom-left");  
-    
-        //view.ui.move("zoom", 'bottom-right');
-        
-        //view.ui.remove("compass");  
-
-        //view.ui.move("navigation-toggle", "bottom-right"); 
                     
 });
         

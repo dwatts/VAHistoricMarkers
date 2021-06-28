@@ -5,13 +5,13 @@ html, body {
     margin-top: 0px;
   }
   
-  #viewDiv {
+#viewDiv {
     padding: 0;
     margin: 0;
     height: 100%;
     width: 100%;
     z-index: 100;
-  }
+}
 
 #title{
     height: 10px;
@@ -64,7 +64,7 @@ html, body {
 h1 {
    font-family: 'Roboto', sans-serif;
    font-weight: 900 !important;
-   font-size: 30px !important;
+   font-size: 25px !important;
    padding: 0px 0px 0px 10px !important;
    margin-top: 0px;
    margin-bottom: 0px;
@@ -73,13 +73,13 @@ h1 {
 h2 {
    font-family: 'Roboto', sans-serif;
    font-weight: 600 !important;
-   font-size: 20px !important;
+   font-size: 19px !important;
 }
 
 h3 {
    font-family: 'Roboto', sans-serif;
    font-weight: 400 !important;
-   font-size: 15px !important;  
+   font-size: 14px !important;  
 }
 
 h4 {
@@ -102,7 +102,7 @@ a:hover {
 #searchDiv {
     position: absolute;
     left: 20px;
-    top: 240px;
+    top: 235px;
     width: 350px;
     z-index: 300;
     display: visible;
@@ -254,7 +254,7 @@ a:hover {
 
 #menu{
     height: 90px;
-    width: 750px;
+    width: 735px;
     z-index: 1001;
     top: 140px;
     left: 15px;
@@ -273,7 +273,7 @@ a:hover {
 
 .black_history, .building, .civil, .colonial, .indust, .comm, .instit, .na, .people, .rev {
     margin:0 auto;
-    max-width:55px;
+    max-width:50px;
     opacity: 1;
     width: 80%;
     cursor: pointer;
@@ -290,7 +290,7 @@ a:hover {
 
 #bh_name, #p_name, #cw_name, #ch_name, #i_name, #cc_name, #inst_name, #na_name, #pe_name, #r_name {
     color:#000;
-    font-size:14px;
+    font-size:13px;
     line-height:16px;
     margin-top:4px;
     text-align: center;
@@ -348,14 +348,14 @@ a:hover {
 /***************Popup Styling*************/
 
 .popIcon {
-    height: 60px;
-    width: 60px;
+    height: 55px;
+    width: 55px;
 }
 
 .esri-popup__main-container {
     border-radius: 10px !important;
     border: 2px solid #000;
-    width: 600px !important;
+    width: 500px !important;
     bottom: 35px;
     height: auto;
 }
@@ -526,6 +526,28 @@ div {
   color: #000 !important;
 }
 
+/**********Custom Scrollbar***********/
+
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #fff; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #404040; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #000; 
+  }
+
 /***************Tooltip Styling*************/
 
 .fa-question-circle .tooltiptext {
@@ -647,10 +669,10 @@ div {
         padding: 0px !important;
     }
 
-    .popCon {
+    /*.popCon {
         padding-right: 10px !important;
         text-align: justify;
-    } 
+    }*/ 
 
     h1 {
         font-size: 20px !important;
@@ -713,52 +735,6 @@ div {
 }
 
 
-/*@media (max-width: 780px) {
-    #title{
-        height: 10px;
-        width: calc(100% - 30px);
-        top: 15px;
-        left: 15px;
-        font-size:40px;
-        color: black;
-    }
-
-    #subTitle{
-        font-size: 20px;
-        left: 15px;
-    }
-
-    #toggleText {
-        left: 15px;
-        font-size: 14px;
-        top: 95px;
-    }
-    
-    #menu {
-        position: absolute;
-        left: 10px;
-        height: 30px;
-        width: calc(100% - 100px);
-        top: 125px;
-    }
-
-    .black_history, .building, .civil, .colonial, .indust, .comm, .instit, .na, .people, .rev {
-        width: 60% ;
-    }
-
-    #bh_name, #p_name, #cw_name, #ch_name, #i_name, #cc_name, #inst_name, #na_name, #pe_name, #r_name { 
-        font-size: 12px;
-    }
-
-    #searchDiv {
-        left: 15px;
-        top: 215px;
-    }
-
-}*/
-
-
-
 @media (max-width: 1500px) {
     .esri-popup__main-container {
         width: 400px !important;
@@ -812,8 +788,8 @@ div {
         position: absolute;
         left: 10px;
         height: 30px;
-        width: 65%;
-        min-width: 600px;
+        width: 55%;
+        min-width: 550px;
         top: 125px;
     }
 
@@ -829,5 +805,95 @@ div {
         left: 15px;
         top: 215px;
     }
+
+    .popCon {
+        padding-right: 10px !important;
+        text-align: justify;
+    }
     
+}
+
+@media (max-height: 500px) {
+    #title {
+        font-size: 25px;
+    }
+    
+    #subTitle{
+        display: none;
+    }
+
+    #toggleText {
+        left: 15px;
+        font-size: 14px;
+        top: 45px;
+    }
+
+    .fa-question-circle {
+        font-size: 14px !important;
+    }
+
+    .fa-question-circle .tooltiptext {
+        left: 150px;
+        top: 18px;
+    }
+
+    .searchTitle {
+        font-size: 14px !important;
+        font-weight: 700 !important;
+    }
+
+    #searchDiv {
+        display: none;
+        top: 105px;
+    }
+
+    #menu {
+        min-width: 300px;
+        top: 70px;
+    }
+
+    .black_history, .building, .civil, .colonial, .indust, .comm, .instit, .na, .people, .rev {
+        width: 75% ;
+    }
+
+    #bh_name, #p_name, #cw_name, #ch_name, #i_name, #cc_name, #inst_name, #na_name, #pe_name, #r_name { 
+        display: none;
+    }
+
+    .esri-popup__main-container {
+        max-height: 200px !important;
+        width: 300px !important;
+    }
+
+    #legendButton {
+        display: block;
+    }
+
+    #findButton {
+        display: block;
+    }
+
+    #othButtonDiv {
+        width: 138px;
+    }
+
+    #infoDiv {
+        max-height: 50%;
+        top: 30px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: 1100;
+    }
+
+    .infoContent {
+        overflow-y: auto;
+        height: calc(100% - 55px);
+        padding-right: 10px !important;
+    }
+
+    #legendDiv {
+        max-width: 350px;
+    }
 }

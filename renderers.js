@@ -1,4 +1,4 @@
-var verticalOffset = {
+const verticalOffset = {
     screenLength: 40,
     maxWorldLength: 2000,
     minWorldLength: 500
@@ -34,7 +34,7 @@ function getSiteColor(color) {
   };
 }      
 
-var signRenderer = {
+const signRenderer = {
     type: "unique-value",
     field: "Tag",
     uniqueValueInfos: [
@@ -99,7 +99,7 @@ var signRenderer = {
     ]
 };
 
-var verticalOffsetTwo = {
+const verticalOffsetTwo = {
     screenLength: 40,
     maxWorldLength: 2000,
     minWorldLength: 500
@@ -138,7 +138,7 @@ function getSiteColorTwo(icon) {
   };
 }      
 
-var signRendererTwo = {
+const signRendererTwo = {
     type: "unique-value",
     field: "Tag",
     uniqueValueInfos: [
@@ -203,7 +203,7 @@ var signRendererTwo = {
     ]
 };
 
-var verticalOffsetThree = {
+const verticalOffsetThree = {
     screenLength: 20,
     maxWorldLength: 500,
     minWorldLength: 100
@@ -242,7 +242,7 @@ function getSiteColorThree(icon) {
   };
 }      
 
-var signRendererThree = {
+const signRendererThree = {
     type: "unique-value",
     field: "Tag",
     uniqueValueInfos: [
@@ -307,7 +307,7 @@ var signRendererThree = {
     ]
 };
 
-var verticalOffsetFour = {
+const verticalOffsetFour = {
     screenLength: 20,
     maxWorldLength: 500,
     minWorldLength: 100
@@ -346,7 +346,7 @@ function getSiteColorFour(icon) {
   };
 }      
 
-var signRendererFour = {
+const signRendererFour = {
     type: "unique-value",
     field: "Tag",
     uniqueValueInfos: [
@@ -411,4 +411,43 @@ var signRendererFour = {
     ]
 };
 
+/****County Renderers****/
 
+const countyRenderOne = {
+    type: "simple",
+    symbol: {
+      type: "simple-fill",
+      color: [255, 255, 255, 0],
+      outline: {
+        color: [0,0,0,0.25],
+        width: 1,
+        style: "solid"    
+      }
+    }
+};
+
+const countyRenderTwo = {
+    type: "simple",
+    symbol: {
+      type: "simple-fill",
+      color: [255, 255, 255, 0],
+      outline: {
+        color: [0,0,0,0.4],
+        width: 1,
+        style: "solid"    
+      }
+    }
+};
+
+const countyRenderThree = {
+    type: "simple",
+    symbol: {
+      type: "simple-fill",
+      color: [255, 255, 255, 0],
+      outline: {
+        color: [0,0,0,0.7],
+        width: 1,
+        style: "solid"    
+      }
+    }
+};
