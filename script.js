@@ -20,7 +20,7 @@
       ], function(WebScene, SceneView, Basemap, FeatureLayer, SimpleRenderer, Graphic, ElevationLayer, BaseElevationLayer, Home, Zoom, Expand, /*NavigationToggleVM,*/ SceneLayer, WebTileLayer, Search, Locator, Polygon) {
         
           
-        var ExaggeratedElevationLayer = BaseElevationLayer.createSubclass({
+        const ExaggeratedElevationLayer = BaseElevationLayer.createSubclass({
           properties: {
             exaggeration: 2.5
           },
@@ -428,7 +428,7 @@
         
       // Set Scene View //
           
-       var webscene = new WebScene({
+        const webscene = new WebScene({
             layers: [BH, BP, CW, CF, CI, COMM, INST, NA, PEOPLE, REV, counties, mask, vaCities],
             ground: {
                 layers: [new ExaggeratedElevationLayer()]
@@ -438,7 +438,7 @@
           
         webscene.ground.opacity = 1
 
-        var view = new SceneView({
+        const view = new SceneView({
           container: "viewDiv",
           map: webscene,
           //viewingMode: "global",
@@ -517,7 +517,7 @@
     
         //Setup Catagory Buttons//  
           
-        var layerButton1 = document.getElementById("black_history_button");
+        const layerButton1 = document.getElementById("black_history_button");
 
         layerButton1.addEventListener("click", function() {
             if (BH.visible == true) {
@@ -531,7 +531,7 @@
             }
         });
           
-        var layerButton2 = document.getElementById("building_button");
+        const layerButton2 = document.getElementById("building_button");
 
         layerButton2.addEventListener("click", function() {
             if (BP.visible == true) {
@@ -545,7 +545,7 @@
             }
         });
           
-        var layerButton3 = document.getElementById("civil_button");
+        const layerButton3 = document.getElementById("civil_button");
 
         layerButton3.addEventListener("click", function() {
             if (CW.visible == true) {
@@ -559,7 +559,7 @@
             }
         });  
           
-        var layerButton4 = document.getElementById("colonial_button");
+        const layerButton4 = document.getElementById("colonial_button");
 
         layerButton4.addEventListener("click", function() {
             if (CF.visible == true) {
@@ -573,7 +573,7 @@
             }
         });
           
-        var layerButton5 = document.getElementById("indust_button");
+        const layerButton5 = document.getElementById("indust_button");
 
         layerButton5.addEventListener("click", function() {
             if (CI.visible == true) {
@@ -587,7 +587,7 @@
             }
         });
           
-        var layerButton6 = document.getElementById("comm_button");
+        const layerButton6 = document.getElementById("comm_button");
 
         layerButton6.addEventListener("click", function() {
             if (COMM.visible == true) {
@@ -601,7 +601,7 @@
             }
         });
           
-        var layerButton7 = document.getElementById("instit_button");
+        const layerButton7 = document.getElementById("instit_button");
 
         layerButton7.addEventListener("click", function() {
             if (INST.visible == true) {
@@ -615,7 +615,7 @@
             }
         });
           
-        var layerButton8 = document.getElementById("na_button");
+        const layerButton8 = document.getElementById("na_button");
 
         layerButton8.addEventListener("click", function() {
             if (NA.visible == true) {
@@ -629,7 +629,7 @@
             }
         });    
           
-        var layerButton9 = document.getElementById("people_button");
+        const layerButton9 = document.getElementById("people_button");
 
         layerButton9.addEventListener("click", function() {
             if (PEOPLE.visible == true) {
@@ -643,7 +643,7 @@
             }
         });
     
-        var layerButton10 = document.getElementById("rev_button");
+        const layerButton10 = document.getElementById("rev_button");
 
         layerButton10.addEventListener("click", function() {
             if (REV.visible == true) {
@@ -694,6 +694,7 @@
           $("#findButton").click(function() {
             $("#searchDiv").slideToggle("slow");
             $("#findButton").toggleClass('click');
+            wordSearch.clear();
           });
         });
 
@@ -833,11 +834,11 @@
               resultSymbol: {
                   type: "simple-marker",  
                   style: "circle",
-                  color: "#3288bd",
-                  size: 15, 
+                  color: "#FCE08A",
+                  size: 16, 
                   outline: { 
-                  color: "#9e0142",
-                  width: 5 
+                  color: "#d53e4f",
+                  width: 4 
                   }                  
               }   
           }  
@@ -932,13 +933,13 @@
             })
         });
           
-        var zoom = new Zoom({
+        const zoom = new Zoom({
           view: view,
           layout: "horizontal",
           container: "zoomButtons"
         });   
       
-        var homeBtn = new Home({
+        const homeBtn = new Home({
           view: view,
           container: "homeButton"
         });
