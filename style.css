@@ -641,7 +641,7 @@ div {
     }
 
     #othButtonDiv {
-        width: 138px;
+        width: 143px;
     }
 
     #searchDiv {
@@ -675,7 +675,6 @@ div {
     }
 
     .black_history, .building, .civil, .colonial, .indust, .comm, .instit, .na, .people, .rev {
-        /*max-width:65px;*/
         width: 87% !important;
     }
     
@@ -700,11 +699,6 @@ div {
     .esri-popup__header {
         padding: 0px !important;
     }
-
-    /*.popCon {
-        padding-right: 10px !important;
-        text-align: justify;
-    }*/ 
 
     h1 {
         font-size: 20px !important;
@@ -853,8 +847,14 @@ div {
     #infoDiv {
         max-height: 350px;
     }
-    
 }
+
+@media (min-width: 1500px) {
+    #legendDiv {
+        display: none !important;
+    }
+}
+
 
 @media (max-height: 500px) {
     #title {
@@ -918,7 +918,7 @@ div {
     }
 
     #othButtonDiv {
-        width: 138px;
+        width: 143px;
     }
 
     #infoDiv {
@@ -929,6 +929,7 @@ div {
         right: 0;
         margin: auto;
         z-index: 1100;
+        padding: 10px !important;
     }
 
     #othButtonDiv {
@@ -950,7 +951,8 @@ div {
     }
 
     h2 {
-        margin-top: 2px;
+        margin-top: 5px;
+        margin-bottom: 10px;
     }
 
     h4 {
