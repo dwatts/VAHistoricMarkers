@@ -663,8 +663,14 @@
             $("#infoButton").click(function(){
               $("#infoDiv").fadeToggle(500);
               $('#legendDiv').css({'display': 'none'})
+              $(".esri-icon-question").toggleClass('click');
             });
           });
+
+          $("#closeInfo").click(function() {
+            $("#infoDiv").fadeOut(500);
+            $(".esri-icon-question").toggleClass('click');
+          })
 
         //Legend Window//
 
@@ -672,13 +678,20 @@
           $("#legendButton").click(function(){
             $("#legendDiv").fadeToggle(500);
             $('#infoDiv').css({'display': 'none'})
+            $("#legendButton").toggleClass('click');
           });
         });
+
+        $("#closeLeg").click(function() {
+          $("#legendDiv").fadeOut(500);
+          $("#legendButton").toggleClass('click');
+        })
 
         //Search Functionality//
         $( document ).ready(function() {
           $("#findButton").click(function() {
             $("#searchDiv").slideToggle("slow");
+            $("#findButton").toggleClass('click');
           });
         });
 

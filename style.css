@@ -181,7 +181,7 @@ a:hover {
     background-color: #fff;
     opacity: 0.9;
     width: 450px;
-    height: 410px;
+    height: 390px;
     border-radius: 10px;
     border: 3px solid #000;
     padding: 0px 10px 10px 10px;
@@ -192,6 +192,18 @@ a:hover {
     display: none;
 }
 
+.closeInfo {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: #404040 !important;
+}
+
+.closeInfo:hover {
+    cursor: pointer;
+    color: #d53e4f !important;
+}
+
 /***************Legend Div Styling*************/
 
 #legendDiv {
@@ -200,7 +212,7 @@ a:hover {
     opacity: 0.9;
     border-radius: 10px;
     width: 86%;
-    height: 25%;
+    height: 26%;
     min-height: 200px;
     position: fixed;
     /*top: 0;*/
@@ -228,6 +240,7 @@ a:hover {
     display:flex;
     flex-direction:column;
     width: 18%;
+    padding-bottom: 4px;
 }
 
 .black_history_leg, .building_leg, .civil_leg, .colonial_leg, .indust_leg, .comm_leg, .instit_leg, .na_leg, .people_leg, .rev_leg {
@@ -248,6 +261,18 @@ a:hover {
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
     filter: drop-shadow(10px 15px 10px rgba(217, 217, 217, 0.9));
+}
+
+.closeLeg {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: #404040 !important;
+}
+
+.closeLeg:hover {
+    color: #66c2a5;
+    cursor: pointer;
 }
 
 /***************Icon Styling*************/
@@ -448,6 +473,10 @@ div {
     cursor: pointer;
 }
 
+#legendButton.click {
+    background-color: #d53e4f !important;    
+  }
+
 #findButton {
     display: none;
     color: #000 !important;
@@ -460,9 +489,13 @@ div {
  }
  
  #findButton:hover {
-     background-color: #d53e4f !important;
-     color: #000 !important;
-     cursor: pointer;
+    background-color: #d53e4f !important;
+    color: #000 !important;
+    cursor: pointer;
+ }
+
+ #findButton.click {
+    background-color: #d53e4f !important;
  }
 
 .esri-icon-question {
@@ -614,7 +647,7 @@ div {
     #searchDiv {
         left: 15px !important;
         width: calc(100% - 30px) !important;
-        top: 115px !important;
+        top: 120px !important;
         display: none;
     }
 
@@ -657,7 +690,6 @@ div {
     .esri-popup__main-container {
         margin-bottom: 0px !important;
         width: 100%;
-        /*width: calc(100% - 30px) !important;*/
         max-height: 200px !important;
     }
 
@@ -680,6 +712,7 @@ div {
 
     h2{
         font-size: 16px !important;
+        margin-top: 5px;
         margin-bottom: 10px;
     }
 
@@ -776,12 +809,18 @@ div {
     #subTitle{
         font-size: 20px;
         left: 15px;
+        top: 60px;
     }
 
     #toggleText {
         left: 15px;
         font-size: 14px;
-        top: 95px;
+        top: 90px;
+    }
+
+    .fa-question-circle .tooltiptext {
+        left: 153px;
+        top: 24px;
     }
     
     #menu {
@@ -789,12 +828,12 @@ div {
         left: 10px;
         height: 30px;
         width: 55%;
-        min-width: 550px;
-        top: 125px;
+        min-width: 650px;
+        top: 120px;
     }
 
     .black_history, .building, .civil, .colonial, .indust, .comm, .instit, .na, .people, .rev {
-        width: 65% ;
+        width: 70% ;
     }
 
     #bh_name, #p_name, #cw_name, #ch_name, #i_name, #cc_name, #inst_name, #na_name, #pe_name, #r_name { 
@@ -803,12 +842,16 @@ div {
 
     #searchDiv {
         left: 15px;
-        top: 215px;
+        top: 210px;
     }
 
     .popCon {
         padding-right: 10px !important;
         text-align: justify;
+    }
+
+    #infoDiv {
+        max-height: 350px;
     }
     
 }
@@ -834,7 +877,7 @@ div {
     }
 
     .fa-question-circle .tooltiptext {
-        left: 150px;
+        left: 153px;
         top: 18px;
     }
 
@@ -904,5 +947,13 @@ div {
 
     #legendDiv {
         max-width: 350px;
+    }
+
+    h2 {
+        margin-top: 2px;
+    }
+
+    h4 {
+        font-size: 10px !important;
     }
 }
