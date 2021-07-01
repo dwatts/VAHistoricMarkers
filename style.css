@@ -315,8 +315,8 @@ a:hover {
 
 .black_history.pressed, .building.pressed, .civil.pressed, .colonial.pressed, .indust.pressed, .comm.pressed, .instit.pressed, .na.pressed, .people.pressed, .rev.pressed  {
   opacity: 0.4;
-  filter: none;
-    -webkit-filter: none;
+  filter: none !important;
+    -webkit-filter: none !important;
 }
 
 #bh_name, #p_name, #cw_name, #ch_name, #i_name, #cc_name, #inst_name, #na_name, #pe_name, #r_name {
@@ -689,7 +689,6 @@ div {
 
     .black_history, .building, .civil, .colonial, .indust, .comm, .instit, .na, .people, .rev {
         width: 87% !important;
-        -webkit-filter: drop-shadow(3px 3px 3px #b6b6b6);
     }
     
     #bh_name, #p_name, #cw_name, #ch_name, #i_name, #cc_name, #inst_name, #na_name, #pe_name, #r_name { 
