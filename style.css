@@ -126,7 +126,7 @@ a:hover {
     font-size: 12px;
     font-family: 'Roboto', sans-serif !important;
     padding: 0px !important;
-    filter: drop-shadow(3px 3px 3px #b6b6b6);
+    /*filter: drop-shadow(3px 3px 3px #b6b6b6);*/
 }
       
 #searchButton:hover {
@@ -143,7 +143,7 @@ a:hover {
 
 #wordSearch {
     width: 100%;
-    filter: drop-shadow(3px 3px 3px #b6b6b6);  
+    /*filter: drop-shadow(3px 3px 3px #b6b6b6);*/
 }
 
 .esri-search {
@@ -305,8 +305,6 @@ a:hover {
     width: 80%;
     cursor: pointer;
     z-index: 1;
-    filter: drop-shadow(3px 3px 3px #b6b6b6);
-    -webkit-filter: drop-shadow(3px 3px 3px #b6b6b6);
 }
 
 .black_history:hover, .building:hover, .civil:hover, .colonial:hover, .indust:hover, .comm:hover, .instit:hover, .na:hover, .people:hover, .rev:hover {
@@ -315,8 +313,6 @@ a:hover {
 
 .black_history.pressed, .building.pressed, .civil.pressed, .colonial.pressed, .indust.pressed, .comm.pressed, .instit.pressed, .na.pressed, .people.pressed, .rev.pressed  {
   opacity: 0.4;
-  filter: none !important;
-  -webkit-filter: none !important;
 }
 
 #bh_name, #p_name, #cw_name, #ch_name, #i_name, #cc_name, #inst_name, #na_name, #pe_name, #r_name {
@@ -471,7 +467,7 @@ div {
    margin-top: 0px !important;
    padding: 5px;
    margin-left: 5px;
-   box-shadow: 0px 2px 10px rgba(0,0,0,0.4) !important;
+   /*box-shadow: 0px 2px 10px rgba(0,0,0,0.4) !important;*/
 }
 
 #legendButton:hover {
@@ -493,7 +489,7 @@ div {
     margin-top: 0px !important;
     padding: 5px;
     margin-left: 5px;
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.4) !important;
+    /*box-shadow: 0px 2px 10px rgba(0,0,0,0.4) !important;*/
  }
  
  #findButton:hover {
@@ -514,7 +510,7 @@ div {
     margin-top: 0px !important;
     padding: 5px;
     margin-left: 5px;
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.4) !important;
+    /*box-shadow: 0px 2px 10px rgba(0,0,0,0.4) !important;*/
 }
 
 .esri-icon-question:hover {
@@ -552,7 +548,7 @@ div {
   margin-top: 0px !important;
   margin-left: 5px;
   padding: 5px;
-  box-shadow: 0px 2px 10px rgba(0,0,0,0.4) !important;
+  /*box-shadow: 0px 2px 10px rgba(0,0,0,0.4) !important;*/
 }
 
 .esri-home {
@@ -562,7 +558,7 @@ div {
   border-radius: 50% !important;
   margin-top: 0px !important;
   padding: 5px;
-  box-shadow: 0px 2px 10px rgba(0,0,0,0.4) !important;
+  /*box-shadow: 0px 2px 10px rgba(0,0,0,0.4) !important;*/
 }
 
 
@@ -690,11 +686,6 @@ div {
     .black_history, .building, .civil, .colonial, .indust, .comm, .instit, .na, .people, .rev {
         width: 87% !important;
     }
-
-    .black_history.pressed, .building.pressed, .civil.pressed, .colonial.pressed, .indust.pressed, .comm.pressed, .instit.pressed, .na.pressed, .people.pressed, .rev.pressed  {
-        filter: none !important;
-        -webkit-filter: none !important;
-      }
     
     #bh_name, #p_name, #cw_name, #ch_name, #i_name, #cc_name, #inst_name, #na_name, #pe_name, #r_name { 
         display: none;
