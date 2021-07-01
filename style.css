@@ -314,7 +314,7 @@ a:hover {
 
 .black_history.pressed, .building.pressed, .civil.pressed, .colonial.pressed, .indust.pressed, .comm.pressed, .instit.pressed, .na.pressed, .people.pressed, .rev.pressed  {
   opacity: 0.4;
-  -webkit-filter: drop-shadow(0px 0px 0px #fff);
+  -webkit-filter: unset !important;
 }
 
 #bh_name, #p_name, #cw_name, #ch_name, #i_name, #cc_name, #inst_name, #na_name, #pe_name, #r_name {
