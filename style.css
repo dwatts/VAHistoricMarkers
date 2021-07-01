@@ -215,6 +215,7 @@ a:hover {
     border-radius: 10px;
     width: 86%;
     height: 26%;
+    max-height: 200px;
     min-height: 200px;
     position: fixed;
     /*top: 0;*/
@@ -753,8 +754,8 @@ div {
     }
 
     .fa-question-circle .tooltiptext {
-        left: 153px;
-        top: 18px;
+        left: 152px;
+        top: 18px !important;
     }
 
     .navbar {
