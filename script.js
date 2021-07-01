@@ -706,21 +706,21 @@
           if (state == 1) {
             wordSearch.popupEnabled = false;
             wordSearch.sources = address;
-            wordSearch.allPlaceholder = "Enter an Address";
+            wordSearch.allPlaceholder = "Enter an Address or Place";
             $(".searchTitle").html("Search by Address");
             wordSearch.clear();
             state = 0;
           } else if (state != 1 ) {
             wordSearch.popupEnabled = true;
             wordSearch.sources = words;
-            wordSearch.allPlaceholder = "Enter an Keyword";
+            wordSearch.allPlaceholder = "Enter a Keyword";
             $(".searchTitle").html("Search by Keyword");
             wordSearch.clear();
             state = 1;
           } else {
             wordSearch.popupEnabled = true;
             wordSearch.sources = words;
-            wordSearch.allPlaceholder = "Enter an Keyword";
+            wordSearch.allPlaceholder = "Enter a Keyword";
           };
         });
 
