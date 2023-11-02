@@ -364,7 +364,8 @@
         });
         
         const mapBaseLayerTwo = new WebTileLayer({
-          urlTemplate: "https://stamen-tiles-{subDomain}.a.ssl.fastly.net/terrain/{level}/{col}/{row}.png",
+          // urlTemplate: "https://stamen-tiles-{subDomain}.a.ssl.fastly.net/terrain/{level}/{col}/{row}.png",
+          urlTemplate: "https://tiles.stadiamaps.com/tiles/stamen_terrain/{z}/{x}/{y}{r}.png",
           subDomains: ["a", "b", "c", "d"],
           copyright:
             'Map tiles by <a href="http://stamen.com/">Stamen Design</a>, ' +
@@ -381,7 +382,8 @@
         });  
           
         const mapBaseLayer = new WebTileLayer({
-          urlTemplate: "https://stamen-tiles-{subDomain}.a.ssl.fastly.net/terrain-background/{level}/{col}/{row}.png",   
+          // urlTemplate: "https://stamen-tiles-{subDomain}.a.ssl.fastly.net/terrain-background/{level}/{col}/{row}.png",
+          urlTemplate: "https://tiles.stadiamaps.com/tiles/stamen_terrain/{z}/{x}/{y}{r}.png",   
           subDomains: ["a", "b", "c", "d"],  
           copyright:
             'Map tiles by <a href="http://stamen.com/">Stamen Design</a>, ' +
