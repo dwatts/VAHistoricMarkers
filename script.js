@@ -286,7 +286,7 @@
                     family: "Montserrat",  
                     weight: "normal"
                   },
-                  size: 8
+                  size: 10
                 }],
                 verticalOffset: {
                   screenLength: 100,
@@ -315,13 +315,13 @@
                   },
                   halo: {
                     color: [255, 255, 255, 1],
-                    size: 1.5
+                    size: 2
                   },
                   font: {
                     family: "Montserrat",  
                     weight: "normal"
                   },
-                  size: 12
+                  size: 13
                 }],
                 verticalOffset: {
                   screenLength: 100,
@@ -363,41 +363,41 @@
             labelingInfo: [smallLabel]
         });
         
-        const mapBaseLayerTwo = new WebTileLayer({
-          // urlTemplate: "https://stamen-tiles-{subDomain}.a.ssl.fastly.net/terrain/{level}/{col}/{row}.png",
-          urlTemplate: "https://tiles.stadiamaps.com/tiles/stamen_terrain/{z}/{x}/{y}{r}.png",
-          subDomains: ["a", "b", "c", "d"],
-          copyright:
-            'Map tiles by <a href="http://stamen.com/">Stamen Design</a>, ' +
-            'under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. ' +
-            'Data by <a href="http://openstreetmap.org/">OpenStreetMap</a>, ' +
-            'under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
-        });
+        // const mapBaseLayerTwo = new WebTileLayer({
+        //   // urlTemplate: "https://stamen-tiles-{subDomain}.a.ssl.fastly.net/terrain/{level}/{col}/{row}.png",
+        //   urlTemplate: "https://tiles.stadiamaps.com/tiles/stamen_terrain_background/{z}/{x}/{y}{r}.png",
+        //   subDomains: ["a", "b", "c", "d"],
+        //   copyright:
+        //     'Map tiles by <a href="http://stamen.com/">Stamen Design</a>, ' +
+        //     'under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. ' +
+        //     'Data by <a href="http://openstreetmap.org/">OpenStreetMap</a>, ' +
+        //     'under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
+        // });
 
-        const stamen = new Basemap({
-          baseLayers: [mapBaseLayerTwo],
-          title: "Terrain",
-          id: "terrain",
-          thumbnailUrl: "https://stamen-tiles.a.ssl.fastly.net/terrain/10/177/409.png"
-        });  
+        // const stamen = new Basemap({
+        //   baseLayers: [mapBaseLayerTwo],
+        //   title: "Terrain",
+        //   id: "terrain",
+        //   thumbnailUrl: "https://stamen-tiles.a.ssl.fastly.net/terrain/10/177/409.png"
+        // });  
           
-        const mapBaseLayer = new WebTileLayer({
-          // urlTemplate: "https://stamen-tiles-{subDomain}.a.ssl.fastly.net/terrain-background/{level}/{col}/{row}.png",
-          urlTemplate: "https://tiles.stadiamaps.com/tiles/stamen_terrain/{z}/{x}/{y}{r}.png",   
-          subDomains: ["a", "b", "c", "d"],  
-          copyright:
-            'Map tiles by <a href="http://stamen.com/">Stamen Design</a>, ' +
-            'under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. ' +
-            'Data by <a href="http://openstreetmap.org/">OpenStreetMap</a>, ' +
-            'under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
-        });
+        // const mapBaseLayer = new WebTileLayer({
+        //   // urlTemplate: "https://stamen-tiles-{subDomain}.a.ssl.fastly.net/terrain-background/{level}/{col}/{row}.png",
+        //   urlTemplate: "https://tiles.stadiamaps.com/tiles/stamen_terrain/{z}/{x}/{y}{r}.png",   
+        //   subDomains: ["a", "b", "c", "d"],  
+        //   copyright:
+        //     'Map tiles by <a href="http://stamen.com/">Stamen Design</a>, ' +
+        //     'under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. ' +
+        //     'Data by <a href="http://openstreetmap.org/">OpenStreetMap</a>, ' +
+        //     'under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
+        // });
 
-        const stamenBackground = new Basemap({
-          baseLayers: [mapBaseLayer],
-          title: "Terrain-Background",
-          id: "terrain-background",
-          thumbnailUrl: "https://stamen-tiles.a.ssl.fastly.net/terrain-background/10/177/409.png"
-        });
+        // const stamenBackground = new Basemap({
+        //   baseLayers: [mapBaseLayer],
+        //   title: "Terrain-Background",
+        //   id: "terrain-background",
+        //   thumbnailUrl: "https://stamen-tiles.a.ssl.fastly.net/terrain-background/10/177/409.png"
+        // });
 
 
         const counties = new FeatureLayer({
@@ -435,7 +435,11 @@
             ground: {
                 layers: [new ExaggeratedElevationLayer()]
             },
-            basemap: stamenBackground
+            basemap: {
+              portalItem: {
+                id: "5f68957c846942f19d2ac5cb191842c8"
+              }
+            }
         });
           
         webscene.ground.opacity = 1
@@ -505,11 +509,11 @@
             })
         });
         
-        view.when().then(function() {
-            view.watch("scale", function(newValue) {
-            webscene.basemap = newValue <= 288895 ? stamen : stamenBackground;    
-            })
-        });
+        // view.when().then(function() {
+        //     view.watch("scale", function(newValue) {
+        //     webscene.basemap = newValue <= 288895 ? stamen : stamenBackground;    
+        //     })
+        // });
           
         view.when().then(function() {
             view.watch("scale", function(newValue) {
